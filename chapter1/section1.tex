@@ -2,7 +2,7 @@
     These are course notes for MAT 5190.
 \end{abstract}
 
-\section{Probability Theory Brief Review}
+\section{September 8, 2021}
 \subsection{Set Theory}
 
 \begin{definition}[Sample Space]
@@ -13,25 +13,40 @@ Note how the sample space entirely depends on the experiment. Once the sample sp
 An \vocab{event} is a subset of the sample space or equivalently
 an event is a collection of outcomes of an experiment.
 \end{definition}
-We say event $A \subseteq S$ occurs if the outcome of the experiment is in the set $A$. 
+We say event $A \subseteq S$ occurs if the outcome of the experiment is in the set $A$.
+\textbf{Union}: 
+$A\cup B = 
+\{
+x: x \in A \text{ or } x \in B
+\}
+$
+\textbf{Complement}:
+$A^c = 
+\{
+x: x \notin A
+\}$.
+\textbf{Intersection}:
+$
+A \cap B: 
+\{
+x: x \in A \text{ and } x \in B
+\}
+$
 
-\vocab{Union}
-\vocab{Complement}
-\vocab{intersection}
-
-\begin{theorem}
-For any three events, A, B, and C, defined on a sample space S,
-    \begin{enumerate}
-        \item A
-    \end{enumerate}
-\end{theorem}
-
-\begin{definition}[Disjoint or mutually exclusive]
-
+\begin{definition}[Disjoint or mutually exclusive, pairwise disjoint]
+Two events $A$ and $B$ are \vocab{disjoint (or mutually exclusive)}  if $A \cap B = \emptyset$. The events $A_1, A_2, ...$ are pairwise disjoint if $A_i \cap A_j = \emptyset$ for all $i \neq j$.
 \end{definition}
 
-\begin{definition}[Partition]
+\begin{example}
+    Disjoint sets are sets with no points in common. Basic example is the collection
+    $$
+    A_i = [i, i+1), i = 0,1,2,..
+    $$
+    Note the $\cup_{i=1}^{\infty}A_i = [0, \infty)$
+\end{example}
 
+\begin{definition}[Partition]
+If $A_1, A_2,...$ are pairwise disjoint and $ \cup_{i=1}^{\infty}A_i = S$, then the collection $A_1, A_2,...$ forms a \vocab{partition} of $S$.
 \end{definition}
 \subsection{Basics of Probability Theory}
 \begin{definition}[Sigma algebra]
