@@ -50,26 +50,72 @@ If $A_1, A_2,...$ are pairwise disjoint and $ \cup_{i=1}^{\infty}A_i = S$, then 
 \end{definition}
 \subsection{Basics of Probability Theory}
 \begin{definition}[Sigma algebra]
-
+    A collection of subsets of $S$ is called a \vocab{sigma algebra} ( or \vocab{Borel field)}, denoted by $\SB$, if it satisfies the following three properties:
+    
+    \begin{enumerate}[(a)]
+        \item $\emptyset \in \SB$ (the empty set is an element).
+        \item If $A \in \SB$, then $A^c \in \SB$ (closed under complement) 
+        \item If $A_1, A_2, ... \in \SB$, then, $\cup_{i=1}^{\infty}A_i \in \SB$ (closed under countable unions).
+    \end{enumerate}
 \end{definition}
+Many different sigma algebras can be associated with a sample space $S$, the collection $\{\emptyset, S\}$ is the trivial sigma algebra. The only sigma algebra that we will be concerned with is smallest one that contains all open sets in a given sample space.
 
 \begin{definition}[Probability Function]
-
+    Given a sample space $S$ and a sigma algebra $\SB$, a \vocab{probability function} is a function $\PP$ with domain $\SB$ that satisfies
+    \begin{enumerate}
+        \item $\PP(A) \geq 0$ for all $A \in \SB$
+        \item $\PP(S) = 1$
+        \item If $A_1, A_2,... \in \SB$ are pairwise disjoint, then $\PP(\cup_{i=1}^{\infty}A_i) = \sum_{i=1}^{\infty}\PP(A_i)$
+    \end{enumerate}
 \end{definition}
 
-\begin{theorem}
-If $\PP$ is a probability function and $A$ 
-
-\end{theorem}
 
 \subsection{Conditional Probability and Independence}
+\begin{definition}[Conditional Probability]
+    If $A$ and $B$ are events in S, and $\PP(B) \geq 0$, then the \vocab{conditional} probability of $A$ given $B$ is
+    $$
+    \PP(A|B) = \frac{\PP(A \cap B)}{\PP(B)}
+    $$
+\end{definition}
+Note that in the calculation of conditional probability the event $B$ becomes the sample space. The intuition is that our original sample space $S$ has been updated to $B$. All further occurrences are then calibrated with respect to their relation with $B$.
 
-\subsection{Random Variables}
+\begin{theorem}[Bayes' Rule]
 
-\subsection{Distribution Functions}
+$A_1, A_2,...$ be a partition of the sample space, and let $B$ be any set. The for each $i = 1,2,...$
 
-\subsection{Density and Mass Functions}
+$$
+\PP(A_i|B) = \frac{\PP(B|A_i)\PP(A_i)}{\sum_{j=1}^{\infty}\PP(B|A_j)\PP(A_j)}
+$$
+\end{theorem}
 
-\begin{question}
-hello
-\end{question}
+\begin{definition}[Independent, Mutually independent]
+    Two events $A$ and $B$ are \vocab{statistically independent} if
+    $$
+    \PP(A \cap B) = \PP(A)\PP(B)
+    $$
+    A collection of events $A_1,...,A_n$ are \vocab{mutually independent} if for any subcollection $A_{i1},...A_{ik}$, we have 
+    $$
+    \PP\left( \bigcup_{j=1}^{k}A_{ij} \right ) = \prod_{j=1}^{k} \PP(A_{ij})
+    $$
+\end{definition}
+\subsection{More Basics}
+\begin{definition}[Random variable]
+    A \vocab{random variable} is a function from sample space $S$ into $\RR$.
+\end{definition}
+With every random variable $X$ we associate a function called the cumulative distribution function of $X$.
+\begin{definition}[cdf, pmf, pdf]
+    The \vocab{cumulative distribution function} (cdf) of a random variable $X$, denoted by $F_{X}(x)$, is defined by 
+    $$
+    F_X(x) = \PP_X(X\leq x), \text{ for all } x.
+    $$
+    The \vocab{probability mass function} (pmf) of a \textit{discrete} random variable $X$ is given by
+    $$
+    f_X(x) = \PP_X(X=x) \text{ for all } x.
+    $$
+    The \vocab{probability density function} (pdf), $f_X(x)$ of a \textit{continuous} random variable is $X$ is the function that satisfies
+    $$
+    F_X(x) = \int_{-\infty}^{x}f_X(t)dt \text{ for all } x
+    $$
+    
+    
+\end{definition}
