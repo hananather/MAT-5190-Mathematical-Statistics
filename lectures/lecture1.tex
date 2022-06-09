@@ -1,8 +1,110 @@
 \section{September 8, 2021}
+\subsection{Fields and $\sigma$-Fields}
 \begin{definition}
-    A \vocab{probability function} denoted by \PP is a (set) function which assigns each event $A$ a number denoted by $\PP(A)$, called the probability of A, and satisfies the following requirements:
-    
+    A class (set) of subsets of $S$ is said to be a field, and is denoted by $\SF$, if 
+    \begin{enumerate}[(i)]
+        \item $\SF$ is a non-empty class.
+        \item $A \in \SF$ implies that $A^c \in \SF$ (closed under complementations)
+        \item $A_1, A_2, \in \SF$ implies that $A_1 \cup A_2 \in \SF$ (that is, $\SF$ us closed under pairwise unions).
+    \end{enumerate}
 \end{definition}
-\subsection{Bayes' Rule}
+Note that there are two key consequences of the definition of a field:
+\begin{enumerate}
+    \item $S, \emptyset \in \SF$
+    \item If $A_j \SF, j =1,2,..,n$, then, $\bigcup_{j=1}^{k}A_{j} \in \SF$, $\bigcap_{j=1}^{k}A_{j} \in \SF$ for any finite $n$.
+\end{enumerate}
+
+
+\begin{definition}[Sigma algebra]
+    A collection of subsets of $S$ is called a \vocab{sigma algebra} ( or \vocab{Borel field)}, denoted by $\SB$, if it satisfies the following three properties:
+    
+    \begin{enumerate}[(a)]
+        \item $\emptyset \in \SB$ (the empty set is an element).
+        \item If $A \in \SB$, then $A^c \in \SB$ (closed under complement) 
+        \item If $A_1, A_2, ... \in \SB$, then, $\cup_{i=1}^{\infty}A_i \in \SB$ (closed under countable unions).
+    \end{enumerate}
+\end{definition}
+Many different sigma algebras can be associated with a sample space $S$, the collection $\{\emptyset, S\}$ is the trivial sigma algebra. The only sigma algebra that we will be concerned with is smallest one that contains all open sets in a given sample space.
+
+\subsection{Basics Concepts of Probability Theory}
+\begin{definition}[Probability Function]
+    Given a sample space $S$ and a sigma algebra $\SB$, a \vocab{probability function} is a function $\PP$ with domain $\SB$ that satisfies
+    \begin{enumerate}
+        \item $\PP(A) \geq 0$ for all $A \in \SB$
+        \item $\PP(S) = 1$
+        \item If $A_1, A_2,... \in \SB$ are pairwise disjoint, then $\PP(\cup_{i=1}^{\infty}A_i) = \sum_{i=1}^{\infty}\PP(A_i)$
+    \end{enumerate}
+\end{definition}
+
+
+\subsection{Conditional Probability and Independence}
+\begin{definition}[Conditional Probability]
+    If $A$ and $B$ are events in S, and $\PP(B) \geq 0$, then the \vocab{conditional} probability of $A$ given $B$ is
+    $$
+    \PP(A|B) = \frac{\PP(A \cap B)}{\PP(B)}
+    $$
+\end{definition}
+Note that in the calculation of conditional probability the event $B$ becomes the sample space. The intuition is that our original sample space $S$ has been updated to $B$. All further occurrences are then calibrated with respect to their relation with $B$.
+
+\begin{theorem}[Bayes' Rule]
+
+$A_1, A_2,...$ be a partition of the sample space, and let $B$ be any set. The for each $i = 1,2,...$
+
+$$
+\PP(A_i|B) = \frac{\PP(B|A_i)\PP(A_i)}{\sum_{j=1}^{\infty}\PP(B|A_j)\PP(A_j)}
+$$
+\end{theorem}
+
+\begin{definition}[Independent, Mutually independent]
+    Two events $A$ and $B$ are \vocab{statistically independent} if
+    $$
+    \PP(A \cap B) = \PP(A)\PP(B)
+    $$
+    A collection of events $A_1,...,A_n$ are \vocab{mutually independent} if for any subcollection $A_{i1},...A_{ik}$, we have 
+    $$
+    \PP\left( \bigcup_{j=1}^{k}A_{ij} \right ) = \prod_{j=1}^{k} \PP(A_{ij})
+    $$
+\end{definition}
 \subsection{Random Variables}
+Given a probability space $(S, \SF, \PP)$, the main objective of probability theory is that of calculating probabilities of events which may be of importance to us. The sample space $S$ may be quite an abstract set, thus we can faciliate our calculations by a transformation of the sample space $S$, into a subset of the real line $\RR$. This is achieved by a \vocab{random variable} which is a function from sample space $S$ into $\RR$.
+With every random variable $X$ we associate a function called the cumulative distribution function of $X$.
+
+
+\begin{definition}[cdf, pmf, pdf]
+    The \vocab{cumulative distribution function} (cdf) of a random variable $X$, denoted by $F_{X}(x)$, is defined by 
+    $$
+    F_X(x) = \PP_X(X\leq x), \text{ for all } x.
+    $$
+    The \vocab{probability mass function} (pmf) of a \textit{discrete} random variable $X$ is given by
+    $$
+    f_X(x) = \PP_X(X=x) \text{ for all } x.
+    $$
+    The \vocab{probability density function} (pdf), $f_X(x)$ of a \textit{continuous} random variable is $X$ is the function that satisfies
+    $$
+    F_X(x) = \int_{-\infty}^{x}f_X(t)dt \text{ for all } x
+    $$
+\end{definition}
+
 \subsection{Transformation of expectations}
+\begin{theorem}
+    Let $X$ have a cdf $F_X(x)$, let $Y=g(X)$, and let $\SX$ and $\SY$ be respective sample spaces.
+    \begin{enumerate}[(a)]
+        \item if $g$ is an increasing function ion $\SX$, $F_Y(y) = F_X(g^{-1}(y))$ for $y \in \SY$.
+        \item if $g$ is a decreasing function on $\SX$ and $X$ is continuous random variable, $F_Y(y) = 1-F_X(g^{-1}(y))$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Let $X$ have a pdf $f_X(x)$ and let $Y = g(X)$, $g$ is monotone function. Let $\SX$ and $\SY$ be the respective sample spaces. Suppose $f_X(x)$ is continuous on $\SX$ and that $g^{-1}(y)$ has continuous derivative on $\SY$. Then the pdf of $Y$ is given by 
+    $$
+    F_Y(y) = 
+    \begin{cases}
+    F_X(g^{-1}(y) \abs{\frac{d}{dy}g^{-1}(y)} & \text{ if } y \in \SY \\
+    0 & \text{otherwise}
+    \end{cases}
+    $$
+\end{theorem}
+
+\begin{theorem}[Probability integral transformation]
+    Let $X$ have a continuous cdf $F_X(x)$ and define the random variable $Y$ as $Y = F_X(X)$. Then $Y$ is uniformly distributed on $(0,1)$, that is, $\PP(Y \leq y) = y, 0<y<1.$
+\end{theorem}
