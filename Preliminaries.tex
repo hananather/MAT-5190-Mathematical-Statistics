@@ -2,53 +2,25 @@
     These are course notes for MAT 5190.
 \end{abstract}
 
-\section{September 8, 2021}
-\subsection{Set Theory}
 
-\begin{definition}[Sample Space]
-The set of all possible outcome of an experiment, $S$ is called the \vocab{sample space} for the experiment.
-\end{definition}
-Note how the sample space entirely depends on the experiment. Once the sample space has been defined, we can consider \textit{collections} of possible outcomes of the experiment.
-\begin{definition}[Event]
-An \vocab{event} is a subset of the sample space or equivalently
-an event is a collection of outcomes of an experiment.
-\end{definition}
-We say event $A \subseteq S$ occurs if the outcome of the experiment is in the set $A$.
-\textbf{Union}: 
-$A\cup B = 
-\{
-x: x \in A \text{ or } x \in B
-\}
-$
-\textbf{Complement}:
-$A^c = 
-\{
-x: x \notin A
-\}$.
-\textbf{Intersection}:
-$
-A \cap B: 
-\{
-x: x \in A \text{ and } x \in B
-\}
-$
 
-\begin{definition}[Disjoint or mutually exclusive, pairwise disjoint]
-Two events $A$ and $B$ are \vocab{disjoint (or mutually exclusive)}  if $A \cap B = \emptyset$. The events $A_1, A_2, ...$ are pairwise disjoint if $A_i \cap A_j = \emptyset$ for all $i \neq j$.
+\section{Basic Concepts}
+\subsection{Fields and $\sigma$-Fields}
+\begin{definition}
+    A class (set) of subsets of $S$ is said to be a field, and is denoted by $\SF$, if 
+    \begin{enumerate}[(i)]
+        \item $\SF$ is a non-empty class.
+        \item $A \in \SF$ implies that $A^c \in \SF$ (closed under complementations)
+        \item $A_1, A_2, \in \SF$ implies that $A_1 \cup A_2 \in \SF$ (that is, $\SF$ us closed under pairwise unions).
+    \end{enumerate}
 \end{definition}
+Note that there are two key consequences of the definition of a field:
+\begin{enumerate}
+    \item $S, \emptyset \in \SF$
+    \item If $A_j \SF, j =1,2,..,n$, then, $\bigcup_{j=1}^{k}A_{j} \in \SF$, $\bigcap_{j=1}^{k}A_{j} \in \SF$ for any finite $n$.
+\end{enumerate}
 
-\begin{example}
-    Disjoint sets are sets with no points in common. Basic example is the collection
-    $$
-    A_i = [i, i+1), i = 0,1,2,..
-    $$
-    Note the $\cup_{i=1}^{\infty}A_i = [0, \infty)$
-\end{example}
 
-\begin{definition}[Partition]
-If $A_1, A_2,...$ are pairwise disjoint and $ \cup_{i=1}^{\infty}A_i = S$, then the collection $A_1, A_2,...$ forms a \vocab{partition} of $S$.
-\end{definition}
-\subsection{Basics of Probability Theory}
 \begin{definition}[Sigma algebra]
     A collection of subsets of $S$ is called a \vocab{sigma algebra} ( or \vocab{Borel field)}, denoted by $\SB$, if it satisfies the following three properties:
     
@@ -60,6 +32,7 @@ If $A_1, A_2,...$ are pairwise disjoint and $ \cup_{i=1}^{\infty}A_i = S$, then 
 \end{definition}
 Many different sigma algebras can be associated with a sample space $S$, the collection $\{\emptyset, S\}$ is the trivial sigma algebra. The only sigma algebra that we will be concerned with is smallest one that contains all open sets in a given sample space.
 
+\subsection{Basics of Probability Theory}
 \begin{definition}[Probability Function]
     Given a sample space $S$ and a sigma algebra $\SB$, a \vocab{probability function} is a function $\PP$ with domain $\SB$ that satisfies
     \begin{enumerate}
