@@ -8,4 +8,25 @@ $$
 \text{where, } \SF_1 \times \SF_2 = \{ (s_1,s_2): s_1 \in A_1, s_2 \in A_2 \}
 $$
 \subsection{Discrete Distributions}
-
+\vocab{Discrete uniform distribution}. We consider an urn with $N$ balls, numbered $1,...,N$. Let $X$ be the number of the randomly select ball from the urn. We have
+$$
+\PP(X=x|N) = \frac{1}{N}, x = 1,...,N.
+$$
+We say that $X$ is \textit{discrete uniform distribution} and we write $X \sim$ Discrete Uniform$(1,N)$. We can prove that $\EE(X) = \frac{N+1}{2}$ and $\VV(X) = \frac{(N+1)(N-1)}{12}$.
+More generally, we have $X \sim$ Discrete Uniform$(N_0,N_1)$ if 
+$$
+\PP(X=x|N) = \frac{1}{N_1 - N_0 +1}, x = N_0,...,N_1.
+$$
+\vocab{Hypergeometric distribution}. Consider an urn which contains $N$ balls: $M$ red and $N-M$ green. Select a sample size of $K$. Let $X$ be a random variable which gives the total number of red balls in this sample. 
+We say that $X$ has a \textit{hypergeometric distribution} and we wrtie $X \sim$ Hypergeometric(N,M,K).
+$$
+\PP(X=x|N,M,K) = \frac{{M \choose x}{N-M \choose K-x}}{{N \choose K}}, x=0,...K; M - (N-K) \leq x \leq M
+$$
+\vocab{Poisson distribution}. Let $\lambda$ be the average number of events which occur in a fixed interval of time and $X$ be the random number of events which occur in the same interval. We have
+$$
+\PP(X=X|\lambda) = e^{-\lambda}\frac{\lambda^{x}}{x!},  x =0,1,2...
+$$
+\vocab{Negative Binomial distribution}. Consider a sequence of identical Bernoulli trials with probability $p$ of success. Let $X$ be the number of trials required to get fixed number $r$ successes. A combinatorial argument shows that
+$$
+\PP(X=x|r,p) = {x-1 \choose r-1}p^{r}(1-p)^{x-r}, x=r,r+1,...
+$$

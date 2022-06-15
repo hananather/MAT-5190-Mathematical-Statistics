@@ -1,2 +1,46 @@
 \section{September 15, 2021}
 \subsection{Continuous Distributions}
+A random variable $X$ has a \textit{continuous distribution} if its cdf is continuous. Today's lecture covered some of the most commonly used continuous distributions. \\ \\
+\vocab{Uniform Distribution}. This is a continuous distribution with pdf:
+$$
+f(x|a,b) = \frac{1}{b-a}, \quad a \leq x \leq b, \quad \text{where }, -\infty < a < b < \infty 
+$$
+\vocab{Gamma Distribution}.  This is a continuous distribution with pdf:
+$$
+f(x|\alpha, \beta) = \frac{1}{\Gamma(\alpha)\beta^{\alpha}}x^{\alpha -1}e^{-x/\beta}, \quad, 0< x < \infty.
+$$
+where $ 0 < \alpha$, $\beta < \infty$ and $\Gamma(\alpha) = \int_{0}^{\infty}x^{\alpha -1}e^{-x} dx$ is the \term{gamma function}. We write $X \sim$Gamma$(\alpha,\beta)$. Note that 
+$$
+\Gamma(\alpha +1) = \alpha\Gamma(\alpha),\quad \Gamma(1) =1, \quad \Gamma \left( \frac{1}{2} \right) =\sqrt{\pi}
+$$
+\vocab{Beta Distribution}. This is a continuous distribution with pdf:
+$$
+f(x|\alpha, \beta) = \frac{1}{B(\alpha, \beta)}x^{\alpha -1}(1-x)^{\beta -1}, \quad 0 < x <1, \text{where } 0 < \alpha, \beta < \infty.
+$$
+Note that $B(\alpha, \beta) = \int_{0}^{1}x^{\alpha -1}(1-x)^{\beta -1} dx$  is the \term{beta function.} We write $X \sim$Beta($\alpha, \beta$). We have
+$$
+B(\alpha, \beta) = \cfrac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)}
+$$
+\vocab{Cauchy Distribution}. This is a continuous distribution with the pdf:
+$$
+f(x|\theta) = \frac{1}{\pi} \cdot \ \frac{1}{1 + (x- \theta)^2}, \quad -\infty < x< \infty
+$$
+Where $-\infty < \theta < \infty$. This is a ``pathological" example, since $\EE X = \infty$.\\
+\vocab{Lognormal Distribution}. This is a continuous distribution with the following pdf:
+$$
+f(x|\mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \cdot \frac{1}{x}
+exp \left \{
+-\frac{(logx - \mu)^2}{2\sigma}\right \}, \quad 0 < x < \infty
+$$
+where $-\infty < \mu < \infty$, $0 < \sigma < \infty$. We write $X \sim$ Lognormal$(\mu, \sigma^2)$.
+\\
+\vocab{Double Exponential Distribution}. This is a continuous distribution with pdf:
+$$
+f(x|\mu,\sigma) = \frac{1}{2\sigma}exp \left \{
+-\frac{\abs{x-\mu}}{\sigma}, \quad -\infty<x<\infty
+\right \}
+$$
+Where $-\infty< \mu \infty$, $0 < \sigma < \infty$. We write $X \sim $Double Exponential($\mu,\sigma$). Its pretty straight forward to check that
+$$
+\EE X = \mu, \quad \VV(X) = 2 \sigma^2.
+$$

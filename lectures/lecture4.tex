@@ -1,3 +1,75 @@
 \section{September 20, 2021}
 \subsection{Exponential Family}
+A family of pdf's (or pmf's) is called \textit{exponential family} if it can be written in the form
+\begin{align}\label{exp_family}
+    f(x|\theta) = h(x)c(\theta)\text{exp} \left \{ \sum_{i=1}^kt_i(x)w_i(\theta)\right \}
+\end{align}
+where $h(x) \geq 0, c(\theta) \geq 0, w_i(\theta) \in \RR, t_i(x) \in \RR$. Here the parameter $\theta = {\theta_1,...,\theta_d}$ is vector-valued. If $d=k$, the family is called a \textit{full exponential family}. If $d < k$, the family is called a \textit{curved exponential family}. 
+
+\begin{example}[Binomial family with $n$ known]
+    $$f(x|p) = {n \choose x} p^{x}(1-p)^{n} \left ( \frac{p}{1-p}\right )^x = 
+    {n \choose x} (1-p)^{n}\text{exp} \left \{ xlog \left( \frac{p}{1-p}\right) \right \}$$
+    $$
+    =h(x)c(\theta)\text{exp} \left \{ \sum_{i=1}^kt_i(x)w_i(\theta)\right \}
+    $$
+\end{example}
+\begin{example}[Poisson Family]
+    $$
+    f(x|\lambda) = \frac{e^{-\lambda}\lambda^{x}}{x!}
+    =\frac{1}{x!}e^{\lambda}\text{exp}\{xlog\lambda\} =
+    h(x)c(\theta)\text{exp} \left \{ \sum_{i=1}^kt_i(x)w_i(\theta)\right \}
+    $$
+\end{example}
+
+\begin{theorem}
+If $X$ is a random variable whose probability density function is given by \ref{exp_family} then
+$$
+\EE \left (
+\sum_{i=1}^{k} = \frac{\partial w_i(\theta)}{\partial\theta_j}t_i(X)\right)
+= -\frac{\partial}{\partial_j} \text{log} c(\theta)
+$$
+
+$$
+\VV ar \left (
+\sum_{i=1}^{k}  \frac{\partial w_i(\theta)}{\partial\theta_j}t_i(X)\right)
+= -\frac{\partial^2}{\partial \theta_j} \text{log} c(\theta) 
+- \EE \left (
+\sum_{i=1}^{k} = \frac{\partial w_i(\theta)}{\partial^2 \theta_j}t_i(X)\right)
+= -\frac{\partial^2}{\partial \theta_j^2} \text{log} c(\theta)$$
+\end{theorem}
 \subsection{Natural Parameterization}
+If we use $\eta_i = w_i(\theta)$ in formula (\ref{exp_family}) and $\eta =(\eta_1,...,\eta_k)$, we obtain the \textit{natural parametrization}:
+
+\begin{align}\label{natural}
+    f(x|\eta) = h(x)c^{*}(\eta) \text{exp} \left \{ 
+    \sum_{i =1}^{k}t_i(x) \eta_i
+    \right \}
+\end{align}
+where $h(x)$ and $t_i(x)$ are the same as in formula (\ref{natural}). The natural space is $\SH = \{\eta: \int_{-\infty}^{\infty}\text{exp}\{ \sum_{i =1}^{k}t_i(x) \eta_i\}$. We have
+$$
+c^*(\eta) = \frac{1}{\int_{-\infty}^{\infty}\text{exp}\{ \sum_{i =1}^{k}t_i(x) \eta_i\}}, \quad \eta \in \SH
+$$
+\vocab{Normal Family.} The natural parametrization if $\eta_1 = 1/\sigma^2$, $\eta_2 = \mu/\sigma^2$ with natural parameter space $\SH = \{(\eta_1,\eta_2): 0 < \eta_1 < \infty, -\infty < \eta_2 < \infty \}$. We have $\mu = \eta_2/ \eta_1$ and $\sigma^2 = 1/\eta_1$ and hence the normal pdf 
+$$
+f(x|\mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma}\text{exp}\left \{ 
+-\frac{\mu^2}{2\sigma^2}
+\right \}
+\text{exp}\left \{ 
+-\frac{x^2}{2\sigma^2} + \frac{x \mu}{ \sigma^2}
+\right \}
+$$
+can be written as,
+$$
+f(x|\eta_1, \eta_2) = \frac{\sqrt{\eta_1}}{\sqrt{2\pi}}
+\text{exp}\left \{ 
+-\frac{\eta_2^2}{2\eta_1}
+\right \}
+\text{exp}\left \{ 
+-\frac{\eta_1x^2}{2} + \eta_2x
+\right \}
+$$
+$$
+= f(x|\eta) = h(x)c^{*}(\eta) \text{exp} \left \{ 
+    \sum_{i =1}^{k}t_i(x) \eta_i
+    \right \}
+$$
