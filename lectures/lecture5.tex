@@ -35,4 +35,29 @@ $$
 F_X(x) = F_Z \left( \frac{x}{\sigma} \right).
 $$
 
-\vocab{Gamma Scale Family}
+\begin{note}
+    \vocab{Gamma Scale Family}. By taking $f(z)$ be the pdf of Gamma$(\alpha,1)$, (where $\alpha$ is fixed), we generate the following scale family
+    $$
+    g(x|\sigma) = \frac{1}{\Gamma(\alpha)\sigma^{\alpha}}x^{\alpha-1}e^{-x/\sigma}, \quad 0 < x < \infty
+    $$
+    \vocab{Double Exponential.} By taking $f(z)$ as the pdf of Double Exponential(0,$\simga$), we generate the following scale family
+    $$
+    g(x|\sigma) = \frac{1}{2\simga}e^{-\abs{x}/\sigma}, \quad -\infty < x < \infty
+    $$
+\end{note}
+
+\subsection{Location-scale families}
+The following family of distributions 
+$\{ (1/ \sigma)f(x-\mu)/ \sigma): -\infty < \mu < \infty, 0 < \sigma < \infty$ \}
+is called \term{location-scale family} with standard pdf $f(z)$.
+\\ \\
+Let $Z$ be a random variable with pdf $f(z)$ and $X = \mu + \sigma Z$. 
+Then pdf of random variable $X$ is given by $(1/\sigma)f(x-\mu)/\sigma)$. If $F_Z(z)$ and $F_X(x)$ are the cdf's of $Z$ are the cdf's of $Z$ and $X$, respectively, then
+$$
+F_X(x) = F_Z \left(\frac{x-\mu}{\sigma} \right)
+$$
+Therefore, clearly we have
+$$
+\EE X = \mu + \sigma \EE Z, \quad \VV ar X = \sigma^2 \VV ar Z
+$$
+Generally, the standard pdf $f(z)$ is chosen in such a way that $\EE Z = 0$ and $\VV ar Z = 1$, this results in $\EE X = \mu$ and $\VV ar X = \sigma$. 
