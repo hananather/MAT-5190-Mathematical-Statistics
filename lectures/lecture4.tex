@@ -6,20 +6,22 @@ A family of pdf's (or pmf's) is called \textit{exponential family} if it can be 
 \end{align}
 where $h(x) \geq 0, c(\theta) \geq 0, w_i(\theta) \in \RR, t_i(x) \in \RR$. Here the parameter $\theta = {\theta_1,...,\theta_d}$ is vector-valued. If $d=k$, the family is called a \textit{full exponential family}. If $d < k$, the family is called a \textit{curved exponential family}. 
 
-\begin{example}[Binomial family with $n$ known]
+\begin{note}
+    \vocab{Binomial family with $n$ known:}
     $$f(x|p) = {n \choose x} p^{x}(1-p)^{n} \left ( \frac{p}{1-p}\right )^x = 
     {n \choose x} (1-p)^{n}\text{exp} \left \{ xlog \left( \frac{p}{1-p}\right) \right \}$$
     $$
     =h(x)c(\theta)\text{exp} \left \{ \sum_{i=1}^kt_i(x)w_i(\theta)\right \}
     $$
-\end{example}
-\begin{example}[Poisson Family]
+    \vocab{Poisson Family:}
     $$
     f(x|\lambda) = \frac{e^{-\lambda}\lambda^{x}}{x!}
     =\frac{1}{x!}e^{\lambda}\text{exp}\{xlog\lambda\} =
     h(x)c(\theta)\text{exp} \left \{ \sum_{i=1}^kt_i(x)w_i(\theta)\right \}
     $$
-\end{example}
+    
+\end{note}
+
 
 \begin{theorem}
 If $X$ is a random variable whose probability density function is given by \ref{exp_family} then
