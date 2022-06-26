@@ -53,5 +53,21 @@ $$
     $$
 \end{definition}
 
+\begin{note}
+    \vocab{Property 1}. If $A$ is a subset of $\RR^2$
+    $$
+     \PP((X,Y) \in A) = \int_{A} \int f(x,y)dxdy 
+    $$
+    \\
+    \vocab{Property 2.} If $g(x,y)$ is a real-valued function, then
+    $$
+    \EE g(X,Y) = \int_{A} \int g(x,y) f(x,y)dxdy
+    $$
+\end{note}
+
+The marginals can be computed by the following formulas:
+$$
+f_X(x) = \int_{ -\infty}^{\infty} f_{X,Y}(x,y) dy, \quad  f_Y(y) = \int_{ -\infty}^{\infty} f_{X,Y}(x,y) dx
+$$
 \subsection{Multinomial}
 The multi-nomial distribution is a \vocab{parametric} distribution for multiple random variables. 
