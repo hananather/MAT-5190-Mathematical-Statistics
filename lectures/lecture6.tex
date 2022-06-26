@@ -1,11 +1,57 @@
 \section{September 27, 2021}
 In this section we are going to consider events that \textit{co-occur}, and revisit concepts such as \textit{independence} and \textit{conditional probability}. We will learn how to handle random variables that co-occur.
-\subsection{Joint and Marginal Distributions}
+\subsection{Discrete Joint and Marginal Distributions}
+
+\begin{definition}[Joint PMF]
+    Let $(X,Y)$ be a bi-variate random vector. We day that the distribution of $(X,Y)$ is \textit{discrete} if the possible values of $(X,Y)$ are countable. In this case the function,
+    $$
+    f(x,y) = f_{X,Y}(x,y) = \PP(X=x,Y=y)
+    $$
+ is called the \vocab{joint pmf} of $X,Y$.
+\end{definition}
+
 What is the most important information about a random variable? The PMF, or the PDF. The multivariate analogue to the \vocab{Joint function}, which takes in a value of two or more random variables, and returns the probability that those two variables jointly take on those values.
 $$
 \PP(X =x, Y=y) \quad \text{Joint Probability of $X$ and $Y$}
 $$
 Should be read a: ``Probability $X$ takes on the value $x$ and $Y$ takes on the value $y$".
-\begin{definition}[Joint probability table]
- A joint probability table is a way of specifying the "joint" probability distribution between two random variables.    
+
+ A joint probability table is a way of specifying the "joint" probability distribution between multiple random variables. It does to by keeping a multi-dimensional lookup table, so essentially any assignment of the random variables, $\PP(X=x,Y=y,...)$ can be directly looked up. A probability mass table is a brute force way to store the joint probabilities of random variables. 
+ 
+ \begin{note}
+    \vocab{Property 1}. If $A$ is a subset of $\RR^2$
+    $$
+    \PP((X,Y) \in A) = \sum_{(x,y) \in A}\PP(X=x,Y=y)
+    $$
+    \\
+    \vocab{Property 2.} If $g(x,y)$ is a real-valued function, then
+    $$
+    \EE g(X,Y) = \sum_{x,y} g(x,y)f(x,y)
+    $$
+ \end{note}
+
+\begin{definition}[Marginal pmf] 
+    Let $f(x,y)$ be the joint PMF of the discrete random vector $(X,Y)$, the PMF of $X$ is called the \vocab{marginal pmf} of $X$, denoted by $f_X(x)$. Similarly,  the PMF of $Y$ is called the marginal PMF of $Y$, denoted by $f_Y(y)$.
 \end{definition}
+The marginals can be computed by the following formulas:
+$$
+f_X(x) = \sum_{y \in \RR} f_{X,Y}(x,y), \quad  f_Y(y) = \sum_{x \in \RR} f_{X,Y}(x,y)
+$$
+
+\subsection{Continuous Joint and Marginal Distributions}
+\begin{definition}
+    Let $(X,Y)$ be a bivariate random vector. We say the distribution of $(X,Y)$ is \textit{continuous} if the joint CDF of $(X,Y)$ is defined by $F(u, v) = \PP(X \leq u, Y \leq v)$ is continuous. In this case the function $f(x,y)$ which satisfies the condition
+    $$
+    F(u, v) = \int_{ -\infty}^{\infty} \int_{-\infty}^{\infty} f(x,y)dxdy
+    $$
+    is called the \vocab{joint pdf} of $(X,Y)$.
+    \\
+    Note that 
+    $$
+    \int_{ -\infty}^{\infty} \int_{-\infty}^{\infty} f(x,y)dxdy = 1, \quad
+    f(x,y) \geq 0 \text{ for all } x,y
+    $$
+\end{definition}
+
+\subsection{Multinomial}
+The multi-nomial distribution is a \vocab{parametric} distribution for multiple random variables. 
