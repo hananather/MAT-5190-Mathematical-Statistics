@@ -1,4 +1,70 @@
 \section{September 29, 2021}
-\subsection{Conditional Distributions Discrete Case}
-\subsection{Conditional Distributions Continuous Case}
+\subsection{Conditional Distributions (Discrete)}
+Let $(X,Y)$ be discrete bivariate random vector with joint pmf $f(x,y)$ and marginal pmf's $f_X(x)$ and $f_Y(y)$. For all fixed $x \in \SX = 
+\{
+x:f_X(x) > 0
+\}$, we define
+$$
+f(y|x) = \frac{f(x,y)}{f_X(x)}
+$$
+The function $y \mapsto f(y|x)$ is called \term{conditional pmf} of $Y$ given $X=x$.
+For every $x \in \SX$, the function $y \mapsto f(y|x)$ is a pmf, since
+$$
+f(y|x) \geq 0 \text{ for all } y, \quad \text{and} \quad \sum_{y}f(y|x) =1.
+$$
+
+\begin{note}
+    \vocab{Property 1.}
+    For every fixed $x \in \SX$ and for every set $A$
+    $$
+    \PP(Y \in A|X=x) = \sum_{y \in A}f(y|x). 
+    $$
+    The function $y \mapsto F(y|x):= \PP(Y \leq y|X=x)$ is called the \term{conditional cdf} of $Y$ given that $X=x$.
+    \\
+    \vocab{Property 2.} For every fixed $x \in \SX$ and for every real-valued function $g$
+    $$
+    \EE (g(Y)|X=x) = \sum_y g(y)f(y|x).
+    $$
+\end{note}
+\subsection{Conditional Distributions (Continuous)}
+Let $(X,Y)$ be continuous random vector with joint pdf $f(x,y)$ and marginal pdf's $f_X(x)$ and $f_Y(y)$. For all fixed $x \in \SX = 
+\{
+x:f_X(x) > 0
+\}$, we define
+$$
+f(y|x) = \frac{f(x,y)}{f_X(x)}
+$$
+The function $y \mapsto f(y|x)$ is called \term{conditional pdf} of $Y$ given $X=x$.
+For every $x \in \SX$, the function $y \mapsto f(y|x)$ is a pdf, since
+$$
+f(y|x) \geq 0 \text{ for all } y, \quad \text{and} \quad \int_{-\infty}^{\infty}f(y|x) =1.
+$$
+\begin{moral}
+    Note that in the continuous case $f(y|x) \neq \PP(Y=y|X=x)!$
+\end{moral}
+
+\begin{note}
+    \vocab{Notation 1.} For any fixed $x \in \SX$ and for every set $A$
+    $$
+    \PP(Y \in A |X=x)) = \int_{A}f(y|x)dy
+    $$
+    The function $y \mapsto F(y|x):= \PP(Y \leq y|X=x)$ is called the \term{conditional cdf} of $Y$ given that $X=x$.    
+    \\
+    \vocab{Notation 2.} For every fixed $x \in \SX$ and for every real-valued function $g$
+    $$
+    \EE (g(Y)|X=x) = \int_{- \infty}^{\infty} g(y)f(y|x) dy.
+    $$
+\end{note}
 \subsection{Independence}
+From the definition of conditional pmf we can derive the joint pdf (or pmf) of $(X,Y)$ as 
+$$
+f_{X,Y}(x,y) = f_X(x)f_{Y|X}(y|x).
+$$
+\begin{definition}[Independent R.V's]
+Let $(X,Y)$ be a random vector with joit pdf or pmf $f_{X,Y}(x,y)$, and marginal pdf's or pmf's $f_X(x)$ and $f_Y(y)$. If
+$$
+f_{X,Y}(x,y) = f_X(x)f_Y(y), \quad \text{for all } x,y \in \RR
+$$
+and we say that $X$ and $Y$ are \textit{independent}.
+\end{definition}
+
