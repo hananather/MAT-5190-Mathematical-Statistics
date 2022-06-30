@@ -1,0 +1,31 @@
+\section{}
+\subsection{Bivariate Transformations}
+In this lecture our focus will be on computing the pdf of a bivariate random vector $(U,V)$ defined by
+$$
+U = g_1(X,Y), \quad V = g_2(X,Y)
+$$
+where $(X,Y)$ is a random vector with a known joint pdf $f(x,y)$ and $g_1,g_2$ are defined functions.
+
+\begin{theorem}
+Let $(X,Y)$ be a bivariate random vector with joint pdf $f_{X,Y}(x,y)$ and $\SA = \{
+(x,y): f_{X,Y}(x,y)>0
+\}$.
+Let $g=(g_1,g_2): \SA \to \SB$ be a one-to-one transformation. Denote $g^{-1}:=h = (h_1,h_2)$ and let $J$ be the Jacobian of the transformation
+    $$
+    J = 
+    \begin{bmatrix} \frac{\partial h_1}{\partial u} &
+    \frac{\partial h_1}{\partial v} \\ 
+    \frac{\partial h_2}{\partial u} & 
+    \frac{\partial h_2}{\partial v}
+    \end{bmatrix}
+    $$
+  Then the joint pdf of $(U,V)$ is 
+  $$
+  f_{U,V}(u,v) = f_{X,Y}(h_1(u,v),h_2(u,v)) \cdot |J|, \quad (u,v) \in \SB.
+  $$
+\end{theorem}
+If the transformation $g$ is not one-to-one on $\SA$, but we can find a partition $\SA_1,\SA_2,...,\SA_k$ such thart $g = g^{(i)}:\SA_i \to \SB_i$ is one-to-one for each $i = 1,...,k$, then we can still write down a formula for the joint pdf of $(U,V) = g(X,Y)$:
+$$
+f_{U,V}(u,v) = \sum_{i=1}^{j}f_{X,Y}(h_1^{(i)}(u,v),h_2^{(i)}(u,v)) \cdot |J_i|\II_{(u,v) \in \SB_i}
+$$
+where $h^{(i)} = (h_1^{(i)},h_2^{(i)})$ are the inverse of $g^{(i)}$ and $J_i$ si the corresponding Jacobian.
