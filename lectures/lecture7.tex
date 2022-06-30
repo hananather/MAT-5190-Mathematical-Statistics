@@ -68,3 +68,24 @@ $$
 and we say that $X$ and $Y$ are \textit{independent}.
 \end{definition}
 
+\begin{lemma}
+Let $(X,Y)$ be a bi-variate vector with joint pdf or pmf $f(x,y)$. The variables $X$ and $Y$ are independent if and only if there exists some function $g(x),h(x)$ such that
+$$
+f(x,y) = g(x)h(y), \quad x \in \RR, y \in \RR.
+$$
+\end{lemma}
+Note that function $g(x),h(y)$ ``coincide" with marginal pdf's $f_X(x)$ and $f_Y(y)$ up to a constant, i.e, there exists some positive constants $C_1,C_2$ with $C_1 \times C_2 =1$ such that
+$$
+g(x) = C_1f_X(x), \quad h(y) = C_2f_Y(y).
+$$
+
+\begin{theorem}
+If $X$ and $Y$ are independent, then for any function $\varphi(x), \psi(x)$
+$$
+\EE[\varphi(X)\psi(Y)] = \EE[\varphi(X)]\EE[\psi(Y)]
+$$
+and,
+$$
+M_{X+Y}(t) = M_X(t)M_Y(t).
+$$
+\end{theorem}
