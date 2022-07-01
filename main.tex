@@ -179,10 +179,11 @@
 }
 \declaretheoremstyle[
 	headfont=\bfseries,
-	bodyfont=\normalfont\small,
-	spaceabove=0pt,
-	spacebelow=0pt,
-	mdframed={style=mdblackbox}
+	bodyfont=\normalfont,
+	spaceabove=2pt,
+	spacebelow=1pt,
+	mdframed={style=mdblackbox},
+	headpunct={ --- }
 ]{thmblackbox}
 
 \newenvironment{note}{%
@@ -199,7 +200,7 @@ style=thmgreenbox*,name=Theorem,numberwithin=section]{theorem}
 \declaretheorem[style=thmblackbox,name=Lemma,sibling=theorem]{lemma}
 \declaretheorem[style=thmblackbox,name=Proposition,sibling=theorem]{proposition}
 \declaretheorem[style=thmbluebox,name=Corollary,sibling=theorem]{corollary}
-\declaretheorem[style=thmgreenbox,name=Example,sibling=theorem]{example}
+\declaretheorem[style=thmblackbox,name=Example,sibling=theorem]{example}
 \declaretheorem[style=thmredbox,name=Definition,sibling=theorem]{definition}
 
 \newenvironment{moral}{%
@@ -249,4 +250,10 @@ style=thmgreenbox*,name=Theorem,numberwithin=section]{theorem}
 \input{lectures/lecture6}
 \input{lectures/lecture7}
 \input{lectures/lecture8}
+\input{lectures/lecture9}
+\input{lectures/lecture10}
+\input{lectures/lecture11}
+
+
+
 \end{document}

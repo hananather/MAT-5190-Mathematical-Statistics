@@ -1,0 +1,38 @@
+\section{October 6, 2021}
+\subsection{Hierarchical Models}
+Thus far we have seen random variables which have single distributions, possibly depending on parameters. However, we can think of the parameter of a distribution as being a random variable, which itself has a distribution. 
+
+\begin{example}[Binomial-Poisson hierarchy]
+Classic example of  hierarchical model is the following: An insect lays a large number of eggs, each surviving with probability $p$. On average, how many eggs will survive? 
+The ``large number" of eggs laid is a random variable, often taken to be Poisson$(\lambda)$. Furthermore, if we assume that each eggs survival is independent, we have Bernoulli trials. Therefore if $X =$ number of survivors and $Y=$ number of eggs laid, we have
+$$
+X|Y \sim \text{binomial}(Y,p)
+$$
+$$
+Y \sim \text{Poisson}(\lambda),
+$$
+a hierarchical model.
+\end{example}
+\term{Solution:}\\
+The random variable of interest, $X =$ number of survivors, has the distribution given by
+\begin{align*}
+    \PP(X=x) &= \sum_{y=0}^{\infty} \PP(X=x,Y=y) \\
+             &= \sum_{y=0}^{\infty} \PP(X=x|Y=y) \PP(Y=y) \\
+             &= \sum_{y=x}^{\infty} \left[\binom{y}{x}p^x(1-p)^{y-x} \right] \left[ \frac{e^{-\lambda \lambda^y}}{y!} \right] \\
+             & \vdots \quad \text{(after some algebraic simplifications)} \\ 
+             &= \frac{(\lambda p)^x e^{- \lambda}}{x!} e^{(1-p) \lambda}
+\end{align*}
+Thus, $X \sim$Poission($\lambda p$). Thus, any marginal inference on $X$ is with respect to a Poisson($\lambda p$) distribution, with $Y$ playing no part at all. Introduction $Y$ in the hierarchy was mainly to aid our understanding the model. 
+\\
+Now we can easily compute the expected value
+$$
+\EE[X]= \lambda p
+$$
+so, on average, $\lambda p$ eggs will survive. 
+\\
+\\
+Sometimes calculations can be greatly simplified using the following theorem. Recall that $\EE(X|y)$ is a function of $y$ and $\EE(X|Y)$ is a random variable whose distribution depends on the value of $Y$.
+
+\begin{theorem}
+
+\end{theorem}
