@@ -1,1 +1,19 @@
 \section{October 18, 2021}
+\subsection{Multivariate Distributions}
+The random vector $\boldsymbol{X} = (X_1,\dots,X_n)$ has a sample space in $\RR^n$. If $(X_1,\dots,X_n)$ is discrete random vector (the sample space is countable), then the \term{joint pmf} of $(X_1,\dots,X_n)$ is the function define by $f(\boldsymbol{x}) = f(x_1,\dots,x_n) = \PP(X_1 =x_1,\dots,X_n=x_n)$ for each $(x_1,\dots,x_n=x_1)$. Then for any $A \in \RR^n $,
+$$
+\PP(\boldsymbol{X} \in A) = \sum_{\boldsymbol{x} \in A} f(\boldsymbol{x})
+$$
+If $(X_1,\dots,X_n)$ is continuous random vector, the joint pdf of $(X_1,\dots,X_n)$ is a function $f(x_1,\dots,x_n)$ that satisfies 
+$$
+\PP(\boldsymbol{x}) = \int \dots \int_{A} f(\boldsymbol{x}) dx = \int \dots \int_{A} f(x_1 \dots x_n) dx_1 \dots dx_n
+$$
+These are $n-$ fold integrals with limits of integration set so that the integration is over all points of $ \boldsymbol{x} \in A$.
+
+\begin{note}
+\vocab{Marginal pdf or pmf} of any subset of of of the coordinates of $(X_1,\dots,X_n)$ can be computed by integrating or summing the joint pdf or pmf over all possible values of the other coordinates. 
+
+$$
+f(x_1,...,x_k) = \int_{- \infty}^{\infty} \dots \int_{- \infty}^{\infty} f(x_1,...,x_n)dx_{k+1}...dx_{n}
+$$
+\end{note}

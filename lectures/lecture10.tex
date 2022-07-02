@@ -1,1 +1,80 @@
 \section{October 13, 2021}
+\subsection{Covariance and Correlation}
+
+\begin{definition}[Covariance and Correlation]
+    Let $X$ and $Y$ be random variables such that $\EE X^2 < \infty$, $\EE Y^2 < \infty$. The \vocab{covariance} of $X$ and $Y$ is defined by
+    $$
+    Cov(X,Y) = 
+    \EE
+    \left[(X - \EE X)(Y-\EE Y) \right]
+    $$
+    The \vocab{correlation} is defined as
+    $$
+    \rho_{X,Y} := Corr(X,Y) = 
+    \frac{Cov(X,Y)}{\sqrt{\VV ar(X)\VV ar(Y)}}
+    $$
+    
+\end{definition}
+If $X$ and $Y$ are independent random variables, then Cov(X,Y) = 0. The converse is not true \textbf{in general}. However, the converse is true if $(X,Y)$ are \textbf{bivariate normal} distribution. 
+\\
+Furthermore, if $X$ and $Y$ are random variables and $a$ and $b$ are constants, then
+$$
+\VV ar(aX, bY) = a^2 \VV ar(X) + b^2 \VV ar(Y) + 2ab Cov(X,Y).
+$$
+\vocab{Consequence:} If $X$ and $Y$ are positively correlated(i.e, Cov($X,Y$) $\geq 0$), then 
+$$
+\VV ar(X +Y) \geq \VV ar(X) + \VV ar(Y)
+$$
+\term{Note:} A special case of positive dependence structure ``\textbf{association}". We say that $X$ and $Y$ are \textit{weakly associated} if
+$$
+Cov(g(X),h(Y)) \geq 0
+$$
+for any non-decreasing functions $g,h$ for which covariance exists.
+
+\subsection{Inequalities}
+The inequalities below, although often stated in terms of expectation, rely mainly on properties of numbers. They are all based on the following simple lemma.
+
+\begin{lemma}
+    Let $a$ and $b$ be any positive numbers, and let $p$ and $q$ any positive numbers (greater than 1) stratifying
+    $$
+    \frac{1}{p} + \frac{1}{q} = 1
+    $$
+    Then, 
+    $$
+    \frac{1}{p} a^p + \frac{1}{q} b^q \geq ab
+    $$
+    with equality of $a^p = b^q$.
+\end{lemma}
+\begin{proof}
+    Fix, $b$ and consider the function 
+    $$
+    g(a) = \frac{1}{p} a^p + \frac{1}{q} b^q -ab
+    $$
+    To minimize $g(a)$, we differentiate and set equal to 0:
+    $$
+    \frac{d}{da}g(a) = 0 \implies a^{p-1} -b = 0 \implies a = a^{p-1} 
+    $$
+    We can also check the second derivative to establish that this is indeed a minimum. The value of the function at the minimum is 0. 
+\end{proof}
+\begin{theorem}[Holder's Inequality]
+    Let $X$ and $Y$ be any two random variables, and let $p$ and $q$ satisfy. Then
+    $$
+    |\EE XY| \leq \EE|XY| \leq (\EE |X|^p)^{1/p}\EE |Y|^q)^{1/q}
+    $$
+\end{theorem}
+\begin{proof}
+    The first inequality follows from the fact that $-|XY| \leq XY \leq |XY|$ and theorem 2.2.5 in the textbook. To prove second inequality, define,
+    $$
+    a = \frac{|X|}{(\EE|X|^p)^{1/p}} \quad \text{and} \quad
+    b = \frac{|Y|}{(\EE|Y|^q)^{1/q}}
+    $$
+    Applying the lemma above, and take the expectation of both side. The expectation of left-hand side is 1 and rearranging gives us the second inequality.
+\end{proof}
+\\
+Perhaps the most famous special case of Holder's Inequality is the Cauchy-Schwartz ($p=2$).
+
+\begin{theorem}[Cauchy-Schwartz Inequality]
+    For any two random variables $X$ and $Y$,
+    $$|\EE XY| \leq \EE |XY| \leq (\EE|X|^2)^{1/2} (\EE|Y|^2)^{1/2} 
+    $$
+\end{theorem}
