@@ -34,5 +34,19 @@ so, on average, $\lambda p$ eggs will survive.
 Sometimes calculations can be greatly simplified using the following theorem. Recall that $\EE(X|y)$ is a function of $y$ and $\EE(X|Y)$ is a random variable whose distribution depends on the value of $Y$.
 
 \begin{theorem}
-
+    If $X$ and $Y$ are random variable, then
+    $$\EE(X) = \EE \EE(X|Y)$$
+    and,
+    $$
+    \VV ar(X) = \VV ar(\EE (X|Y)) + \EE (\VV ar(X|Y))
+    $$
 \end{theorem}
+\begin{proof}
+    By definition $$\underbrace{\EE(X|Y) = \sum_{x}x\PP(X=x|Y=y)}_\text{Average of $X$ when we fix $Y=y$}.$$ 
+    But $Y$ is a random variable, so if average over all realizations of $Y$, we have,
+    $$\EE_{Y}\left(\EE_X(X|Y)\right) = \sum_{y}\underbrace{ \sum_{x}x\PP(X=x|Y=y)}_{\EE(X|Y)}\cdot\PP(Y=y)$$
+    by the definition of joint density, we can re-write the equation,
+     $$
+     \implies \sum_{y}\sum_{x}x\PP(x,y) = \sum_{x}\sum_{y}x\PP(x,y) = \sum_{x}x\underbrace{\sum_{y}\PP(x,y)}_{\PP(X=x)} = \sum_{x}x\PP(X=x) = \EE(X).
+     $$
+\end{proof}
