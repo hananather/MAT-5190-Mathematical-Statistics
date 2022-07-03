@@ -1,1 +1,71 @@
 \section{October 20, 2021}
+\subsection{Basic Concepts of Random Samples}
+\begin{definition}[Random sample]
+The random variables $X_1,...,X_n$ are called a \vocab{random sample of size n} from population $f(x)$ if $X_1,...,X_n$ are mutually independent random variables and the marginal pdf or pmf of each $X_i$ is the same function $f(x)$
+\end{definition}
+The joint pdf of the random sample is given by
+$$
+f(x_1, \dots, x_n) = f(x_1) \cdots f(x_n)
+= \prod_{i=1}^{n}f(x_i)
+$$
+The joint pdf can be used to calculate the probabilities involving samples. If the population pdf is a member of the parametric family with a pdf or pmf given by $f(x|\theta)$, then the joint pdf or pmf is
+$$
+f(x_1, \dots, x_n| \theta) = f(x_1| \theta) \cdots f(x_n| \theta)
+= \prod_{i=1}^{n}f(x_i| \theta)
+$$
+
+\begin{definition}
+    Let $X_1,...,X_n$ be a random sample and $T(x_1,...,x_n)$ be real vector valued function, whose domain includes the sample space of $X_1,...,X_n$. The random variable (or vector) $Y = T(X_1,...,X_n)$ is called a \vocab{statistic}.
+\end{definition}
+
+The definition of a statistics is very broad, with only one restriction being that a statistic cannot be a function of the parameter. The following three statistics are used to provide sample summaries for data :
+\begin{enumerate}
+    \item $\Bar{X} = \frac{X_1+ \cdots +X_n}{n}$, the sample mean.
+    \item $S^2 = \frac{1}{n-1} \sum_{i=1}^{n}(X_i- \Bar{X})^2$, the sample variance
+    \item $S^2 = \sqrt{S^2}$, standard deviation.
+\end{enumerate}
+The next result is useful for studying sampling distributions.
+\begin{lemma}
+    Let $X_1,...,X_n$ be a random sample from a population and let $g(x)$ be a function such that $\EE g(X_1)$ and $\VV ar [g(X_1)]$ exist. Then
+    $$
+    \EE \left(
+    \sum_{i=1}^{n} g(X_i)
+    \right)
+    = n(\EE g(X_1))
+    $$
+    and
+    $$
+    \VV ar \left(
+    \sum_{i=1}^{n} g(X_i)
+    \right)
+    = n(\VV ar g(X_1))
+    $$
+\end{lemma}
+\begin{proof}
+Details of the proof are in lecture notes and textbook.
+\end{proof}
+Let $X_2,...X_n$ be a random sampel from a population with mean $\mu$ and variance $\sigma^2 < \infty$. Then
+\begin{enumerate}
+    \item $\EE \Bar{X} = \mu$
+    \item $\VV ar \Bar{X} = \frac{\sigma^2}{n}$
+    \item $\EE S^2 = \sigma^2$
+\end{enumerate}
+
+\begin{theorem}
+Let $X_1,...,X_n$ be a random sample from a population with a mgf $M_x(t)$. Then the mgf of $\Bar{X}$ is given by
+$$
+M_{\Bar{X}}(t) = \left[
+M_{X}(\frac{t}{n})^n
+\right]
+$$
+\end{theorem}
+If the mgf does not exists or doesn't have a closed form, we can use the following result to derive the distribution of $\bar{X}$.
+
+\begin{theorem}
+    Let $X$ and $Y$ be independent continuous random variables with pdf's
+    $f_X(x)$ and $f_Y(y)$. Then the pdf of $U = X+Y$ is given by
+    $$
+    f_U(u) = \int_{-\infty}^{\infty} f_{X}(x)f_{Y}(u-x)dx = 
+    \int_{-\infty}^{\infty} f_{X}(u-y)f_{Y}(y)dy
+    $$
+\end{theorem}
