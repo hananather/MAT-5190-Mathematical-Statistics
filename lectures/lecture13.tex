@@ -8,3 +8,27 @@
         \item $(n-1)S^2/\sigma^2 \sim \chi_{n-1}^2$
     \end{enumerate}
 \end{proposition}
+Recall that if a random vector $(X,Y)$ has a normal distribution, then
+$$
+X,Y \quad \text{are independent } \iff \text{Cov}(X,Y) = 0
+$$
+We can actually generalize this idea to linear combinations of normal random variables. Let $X_1,...,X_n$ be random variables such that $X_i \sim N(\mu_i, \sigma_i^2)$ for each $i=1,..n$. Define the random vector $\boldsymbol{U} =(U_1,...,U_k)$ and $\boldsymbol{V} = (V_1,...,V_r)$ where
+$$
+U_i = \sum_{j=1}^n a_{ij}X_j, \quad i=1,...,k; \quad V_r = \sum_{j=1}^{n}b_{rj}X_j, \quad r=1,...,m
+$$
+and $ a_{ij}$, $b_{rj}$ are constants. Then,
+$$
+U_i \sim N \left( \sum_{j=1}^n a_{ij} \mu_i, \sum_{j=1}^n a_{ij}^2 \sigma_i^2 \right),
+\quad
+V_r \sim N \left( \sum_{j=1}^n b_{rj} \mu_i, \sum_{j=1}^n b_{rj}^2 \sigma_i^2 \right),
+\quad
+\text{Cov}(U_i,V_r) = \sum_{j=1}^n a_{ij} b_{rj} \sigma_j^2
+$$
+and, 
+$$
+U_i,V_r \text{ are independent } \iff \text{Cov}(U_i,V_r) = 0
+$$
+And this also implies that
+$$
+\boldsymbol{U},\boldsymbol{V} \text{ are independent random vectors } \iff U_i, V_r \text{ are independent } \forall i, \forall r.
+$$
