@@ -39,3 +39,24 @@ $$
 for every $j=1,...,n$. From here we conclude that $S^2$ and $\bar{X}$ are independent. 
 
 \subsection{The Derived Distributions: Student’s $t$ and Snedecor’s $F$}
+\begin{definition}[Student's $t$ distribution]
+We say that a random variable $T$ has \vocab{Student's t distribution} with $p$ degrees of freedom (and we write $T \sim t_p$) if its pdf is given by
+$$
+f(t) = \frac{\Gamma(p+1)/2}{\Gamma(p/2)} \cdot
+\frac{1}{(1+t^2/p)^(p+1)/2}, \quad -\infty < t < \infty.
+$$
+\end{definition}
+\textbf{Properties of the $t$ distribution}
+\begin{enumerate}
+    \item $t_1$ = Cauchy($0,1$)
+    \item the graph of student's $t$ distribution is bell-shaped and symmetric around 0.
+    \item We have
+    $$
+    \EE T = 0, \quad \VV ar T = \frac{p}{p-2} \text{ if } p >2.
+    $$
+\end{enumerate}
+Let $U$ and $V$ be random variables such that $U \sim $ Normal(0,1) and $V \sim \chi_p^2$. Then
+$$
+T := \frac{U}{\sqrt{V/p}} \sim t_p.
+$$
+\vocab{Application.}
