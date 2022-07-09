@@ -51,12 +51,25 @@ $$
     \item $t_1$ = Cauchy($0,1$)
     \item the graph of student's $t$ distribution is bell-shaped and symmetric around 0.
     \item We have
-    $$
+    $
     \EE T = 0, \quad \VV ar T = \frac{p}{p-2} \text{ if } p >2.
-    $$
+    $
 \end{enumerate}
 Let $U$ and $V$ be random variables such that $U \sim $ Normal(0,1) and $V \sim \chi_p^2$. Then
 $$
 T := \frac{U}{\sqrt{V/p}} \sim t_p.
 $$
-\vocab{Application.}
+\vocab{Application.} Let $X_1,...,X_n$ be a random sample from Normal($\mu$, $\sigma^2$) population. Then
+$$
+T := \frac{\bar{X} - \mu}{S / \sqrt{n}} \sim t_{n-1}.
+$$
+\textbf{T is used to make inferences about $\mu$, when $\sigma^2$ is unknown.}
+\begin{definition}[Snedecor’s F distribution]
+We say that a continuous random variable $F$ has a Snedecor’s F distribution with $p$ and $q$ degrees of freedom (and we write $F \sim F_{p,q}$) if its pdf is given by
+$$
+f(x) = \frac{\Gamma((p+q)/2)}{\Gamma(p/2)\Gamma(q/2)} \cdot \left( 
+\frac{p}{q}
+\right)^{p/2} \cdot
+\frac{x^{(p/2)-1}}{[1+(p/q)x]^{(p+q)/2)}}, \quad 0 < x < \infty.
+$$
+\end{definition}
