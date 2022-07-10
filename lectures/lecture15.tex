@@ -2,9 +2,33 @@
 \subsection{Convergence Concepts}
 The notion of letting sample size approach infinity can provide us with useful approximations, since it usually happens that expressions become simplified in the limit. 
 \\
-\begin{definition}
+\subsection{Convergence in Probability}
+\begin{definition}[Convergence in probability]
     A sequence of random variables, $X_1,X_2,...$ converges in probability to a random variable $X$ if, for every $\eps > 0$,
     $$
     \lim_{n \to \infty}\PP(|X_n -X| \geq \eps) = 0  \quad \text{or equivalently,} \quad  \lim_{n \to \infty}\PP(|X_n -X| < \eps) = 1
     $$
+\end{definition}
+The law of large number asserts that as $n$ grows, the sample mean $\bar{X}_n$ converges to true mean $\mu$. Law of larger number has two versions (weak and strong), the difference in the two lies in what is mean for a sequence of random variables to converge to a number. 
+
+\begin{theorem}[Weak Law of Large numbers]
+    Let $X_1,X_2,...$ be iid random variables with $\EE X_i = \mu$ and $\VV ar X_i = \sigma^2 < \infty$. Define, $\bar{X}_n = \frac{1}{n}\sum_{i=1}^{n}X_i$. Then, for every $\eps > 0$,
+    $$
+    \lim_{n \to \infty} \PP(|\bar{X}_n - \mu| < \eps ) = 1,
+    $$
+    that is, $\bar{X}_n$ converges in probability to $\mu$.
+\end{theorem}
+We can extend the definition of convergence in probability to functions of random variables. Suppose that $X_1,X_2,...$ converges in probability to a random variable $X$ or to a constant $a$ and $h$ is a continuous function. Then $h(X_1), h(X_2),...$ converges in probability to $h(X)$.
+\\
+We can use the above fact to easily prove that since $S_n^2 \to \sigma^2 \implies S_n = \sqrt{S_n} \to \sigma$.
+\begin{note}
+    \vocab{Properties of convergence in probability:}
+    \begin{enumerate}
+        \item if 
+    \end{enumerate}
+\end{note}
+\subsection{Almost Sure Convergence}
+Almost sure convergence is stronger than convergence in probability. It is similar to point wise convergence of a sequence of functions.
+\begin{definition}
+    A sequence of 
 \end{definition}
