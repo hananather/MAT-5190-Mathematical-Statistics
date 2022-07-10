@@ -1,1 +1,10 @@
 \section{November 10, 2021}
+\subsection{Convergence Concepts}
+The notion of letting sample size approach infinity can provide us with useful approximations, since it usually happens that expressions become simplified in the limit. 
+\\
+\begin{definition}
+    A sequence of random variables, $X_1,X_2,...$ converges in probability to a random variable $X$ if, for every $\eps > 0$,
+    $$
+    \lim_{n \to \infty}\PP(|X_n -X| \geq \eps) = 0  \quad \text{or equivalently,} \quad  \lim_{n \to \infty}\PP(|X_n -X| < \eps) = 1
+    $$
+\end{definition}

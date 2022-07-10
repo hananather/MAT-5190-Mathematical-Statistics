@@ -21,12 +21,20 @@ M =
 $$
 Its important to note that order statistics $X_{(1)},...X_{(n)}$ are random variables, and each $X_{(i)}$ is a function of the random sample $X_1,...,X_n$. Even if the original sample is independent, the order statistics are \textbf{dependent}! 
 \begin{theorem}
-Let $X_1,...,X_n$ be a random sample from discrete distribution with pmf $f(x)$. Suppose that the sample space of $X_1$ is a set $\{x_1,...,x_n \}$ such that $x_1 < x_2 < ...$ with CDF $F(x)$. Then the CDF of the $j^_{th}$ order statistic $X_{(j)}$ is. 
+Let $X_1,...,X_n$ be a random sample from discrete distribution with pmf $f(x)$. Suppose that the sample space of $X_1$ is a set $\{x_1,...,x_n \}$ such that $x_1 < x_2 < ...$ with CDF $F(x)$. Then the CDF of the $j^{th}$ order statistic $X_{(j)}$ is. 
 $$
-\PP(X_{(j)} \leq x) = \sum_{k=j}^{n} {x \choose n} F(x) ^{k}(1 - F(x))^_{n-k}
+\PP(X_{(j)} \leq x) = \sum_{k=j}^{n} {x \choose n} F(x) ^{k}(1 - F(x))^{n-k}
 $$
-In addition to that, the pdf of the $j^_{th}$ order statistic $X_{(j)}$ is given by 
+The pdf of the $j^{th}$ order statistic $X_{(j)}$ is given by 
 $$
 f(X_{j}(x)) = \frac{n!}{(j-1)!(n-1)!}f(x)[F(x)]^{j-1}[1-F(x)]^{n-1}
 $$
 \end{theorem}
+Let $X_{(1)},...,X_{(n)}$ denote the order statistics of a random sample, $X_1,...,X_n$, from continuous population with cdf $F_X(x)$ and pdf $f_X(x)$. Then the joint pdf of $X_{(i)}$ and $X_{(j)}$, $1 \leq i < j \leq n$, is 
+\begin{align*}
+    f_{X_{(i)},X_{(j)}}(u,v) = \frac{n!}{(i-1)!(j-1-i)! (n-j)!}
+f_{X}(u)f_X(v)[F_X(u)]^{i-1} \\
+\times [F_X(u) - F_X(u)]^{j-1-i}[1-F_X(v)]^{n-j}
+\end{align*}
+ 
+
