@@ -21,8 +21,8 @@ M =
 $$
 Its important to note that order statistics $X_{(1)},...X_{(n)}$ are random variables, and each $X_{(i)}$ is a function of the random sample $X_1,...,X_n$. Even if the original sample is independent, the order statistics are \textbf{dependent}! 
 \begin{theorem}
-Let $X_1,...,X_n$ be a random sample from discrete distribution with pmf $f(x)$. Suppose that the sample space of $X_1$ is a set $\{x_1,...,x_n \}$ such that $x_1 < x_2 < ...$ let
+Let $X_1,...,X_n$ be a random sample from discrete distribution with pmf $f(x)$. Suppose that the sample space of $X_1$ is a set $\{x_1,...,x_n \}$ such that $x_1 < x_2 < ...$ with CDF $F(x)$. Then the CDF of the $j^_{th}$ order statistic $X_{(j)}$ is. 
 $$
-p_i = f(x_i) = P(X_1 = x_i)
+\PP(X_{(j)} \leq x) = \sum_{k=j}^{n} {x \choose n} F(x) ^{k}(1 - F(x))^_{n-k}
 $$
 \end{theorem}
