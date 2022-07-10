@@ -1,6 +1,28 @@
 \section{November 8, 2021}
 \subsection{Order Statistics}
-We will consider a transformation that takes  $n$ RV's $X_1,...,X_n$ and essentially returns a sorted list. 
+We will consider a transformation that takes  $n$ RV's $X_1,...,X_n$ and essentially returns them in a sorted order. 
 \begin{definition}
-The \vocab{order statistics}
+The \vocab{order statistics} of random variables $X_1,...,X_n$ are the random variables $X_{(1)},...X_{(n)}$, where
+\begin{align*}
+X_{1} & = min(X_{(1)},...X_{(n)})\\
+X_{2} & = \text{ is the second-smallest of } X_1,...,X_n \\
+& \vdots \\
+X_{n-1} & = \text{ is the second-largest of } X_1,...,X_n \\
+X_{n} & = max(X_{(1)},...X_{(n)}).
+\end{align*}
 \end{definition}
+The sample range is a statistic defined as $R = X_{(n)} - X_{(1)}$. The midrange statistic is defined as $V = (X_{(1)} + X_{(n)})/2$. The \textit{sample median} is defined by
+$$
+M = 
+\begin{cases}
+    X_{\frac{n+1}{2}} \quad \text{if } n \text{ if odd} \\
+   \frac{1}{2}(X_{\frac{n}{2}} + X_{\frac{n}{2} + 1} ) \quad \text{if } n \text{ if odd}
+\end{cases}
+$$
+Its important to note that order statistics $X_{(1)},...X_{(n)}$ are random variables, and each $X_{(i)}$ is a function of the random sample $X_1,...,X_n$. Even if the original sample is independent, the order statistics are \textbf{dependent}! 
+\begin{theorem}
+Let $X_1,...,X_n$ be a random sample from discrete distribution with pmf $f(x)$. Suppose that the sample space of $X_1$ is a set $\{x_1,...,x_n \}$ such that $x_1 < x_2 < ...$ let
+$$
+p_i = f(x_i) = P(X_1 = x_i)
+$$
+\end{theorem}
