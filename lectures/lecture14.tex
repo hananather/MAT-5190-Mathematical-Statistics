@@ -25,4 +25,8 @@ Let $X_1,...,X_n$ be a random sample from discrete distribution with pmf $f(x)$.
 $$
 \PP(X_{(j)} \leq x) = \sum_{k=j}^{n} {x \choose n} F(x) ^{k}(1 - F(x))^_{n-k}
 $$
+In addition to that, the pdf of the $j^_{th}$ order statistic $X_{(j)}$ is given by 
+$$
+f(X_{j}(x)) = \frac{n!}{(j-1)!(n-1)!}f(x)[F(x)]^{j-1}[1-F(x)]^{n-1}
+$$
 \end{theorem}
