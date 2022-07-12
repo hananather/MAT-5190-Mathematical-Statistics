@@ -29,7 +29,7 @@ We can use the above fact to easily prove that since $S_n^2 \to \sigma^2 \implie
         \item If $X_n \xrightarrow{p} X$, $X_n \xrightarrow{p} X$, and $g(x,y)$ is a continuous function, then $g(X_n,Y_n) \xrightarrow{p} g(X,Y)$. 
     \end{enumerate}
 \end{note}
-\subsection{Almost Sure Convergence}
+\subsection{Almost Sure Convergence and Strong Law of Large Numbers}
 Almost sure convergence is stronger than convergence in probability. It is similar to point wise convergence of a sequence of functions.
 \begin{definition}[Almost surely convergence]
     A sequence of random variables, $X_1,X_2,...$ converges almost surely to a random variable $X$ if, for every $\eps > 0$,
@@ -47,4 +47,22 @@ Lets try to understand this definition a bit deeper. A random-variable is just a
     $$
     In other words, sample mean $\bar{X}_n$ converges to the true mean $\mu$ pointwise as $n \to \infty$.
 \end{theorem}
-The law of large number plays a crucial role in simulations and statistics. Lets say we generate data from a large number of i.i.d samples of an experiment, either using a computer simulation or relation world. If we employ proportion of times an event occured to approximate the probability of the event, we are \textit{implicitly} applying the Law of Large Numbers. 
+The law of large number plays a crucial role in simulations and statistics. Lets say we generate data from a large number of i.i.d samples of an experiment, either using a computer simulation or relation world. If we employ proportion of times an event occurred to approximate the probability of the event, we are \textit{implicitly} applying the Law of Large Numbers.
+\subsection{Convergence in Distribution and Central Limit Theorem}
+\begin{definition} [Convergence in Distribution]
+    We say that $\{ X_n \}_{n \geq 1}  = \{ X_1,X_2,... \}$ of random variables \term{converges in distribution} to a random variable $X$ if 
+    $$
+    F_{X_n}(x) = \PP(X_n \leq x) \xrightarrow{n \to \infty} \PP(X \leq x) = F_{X}(x) \quad \text{for all } x \in \RR \
+    $$
+    such that $F_X$ is continuous.\\
+    We say that sequence $\hat{\theta}_{n \geq 1}$ of estimators of $\theta$ is \vocab{asymptotically normal} for $\theta$ if 
+    $$
+    \sqrt{n}(\theta_n - \theta) \xrightarrow{d} Z \sim N(0,\sigma^2) \quad \text{ for some } \sigma^2 >0.
+    $$
+\end{definition}
+Lets try to connect the ideas from previous sections to above definition. The law of large numbers essentially says that if we have $X_1,X_2,X_2,...$ i.i.d with mean $\mu$ and variance $\sigma^2$, $\bar{X}_n \to \mu$ as $n \to \infty$ with probability $1$. But what is the distribution of $\bar{X}_n$ along the way to becoming a constant? This is where the Central Limit Theorem (CLT) comes into play. 
+\begin{theorem}[Central Limit Theorem]
+    Let $\{ X_n \}_{n \geq 1}  = \{ X_1,X_2,... \}$ of random variables, assume that $\EE X_i = \mu$ is finite and $\VV ar(X_1) = \sigma^2 < \infty$.
+    
+    
+\end{theorem}
