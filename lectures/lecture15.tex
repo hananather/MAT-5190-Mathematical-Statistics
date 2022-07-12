@@ -62,7 +62,13 @@ The law of large number plays a crucial role in simulations and statistics. Lets
 \end{definition}
 Lets try to connect the ideas from previous sections to above definition. The law of large numbers essentially says that if we have $X_1,X_2,X_2,...$ i.i.d with mean $\mu$ and variance $\sigma^2$, $\bar{X}_n \to \mu$ as $n \to \infty$ with probability $1$. But what is the distribution of $\bar{X}_n$ along the way to becoming a constant? This is where the Central Limit Theorem (CLT) comes into play. 
 \begin{theorem}[Central Limit Theorem]
-    Let $\{ X_n \}_{n \geq 1}  = \{ X_1,X_2,... \}$ of random variables, assume that $\EE X_i = \mu$ is finite and $\VV ar(X_1) = \sigma^2 < \infty$.
-    
-    
+    Let $\{ X_n \}_{n \geq 1}  = \{ X_1,X_2,... \}$ of random variables, assume that $\EE X_i = \mu$ is finite and $\VV ar(X_i) = \sigma^2 < \infty$.
+    Then 
+    $$
+    \sqrt{n}(\bar{X}_n - \mu) \xrightarrow{d} Z \sim N(0,\sigma^2)
+    $$
 \end{theorem}
+We say that $\{ X_n \}_{n \geq 1}$ is a sequence of asymptotically normal estimators of $\mu$.
+\begin{note}
+    \vocab{Delta Method.}
+\end{note}
