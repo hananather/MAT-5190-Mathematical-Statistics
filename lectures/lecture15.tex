@@ -40,3 +40,11 @@ Almost sure convergence is stronger than convergence in probability. It is simil
 Lets try to understand this definition a bit deeper. A random-variable is just a real-valued function defined on a sample space $S$. Let $s \in S$, then $X_{n}(s)$ and $X(s)$ are all functions defined on $S$. The definition is saying that $X_n$ converges to $X$ almost surely if the functions $X_{n}(s)$ converges to $X(s)$.\\
 \\
 \term{Note:} \textit{Almost surely convergence} implies convergence in probability, however converse is not true. We say that the sequence of $\{ \hat{\theta}_n \}_n$ is a \textit{strongly consistent} estimators for the parameter $\theta$ if $\hat{\theta}_n \xrightarrow{a.s} \theta$.
+\begin{theorem}[The Strong Law of Large Numbers]
+    Let $\{ \bar{X}_n \}_n$ be a sequence of iid random variables. Suppose that $\EE|X_1| \leq \infty$ and $\EE X_1 = \mu$. Then 
+    $$
+    \bar{X}_n \xrightarrow{a.s} \mu 
+    $$
+    In other words, sample mean $\bar{X}_n$ converges to the true mean $\mu$ pointwise as $n \to \infty$.
+\end{theorem}
+The law of large number plays a crucial role in simulations and statistics. Lets say we generate data from a large number of i.i.d samples of an experiment, either using a computer simulation or relation world. If we employ proportion of times an event occured to approximate the probability of the event, we are \textit{implicitly} applying the Law of Large Numbers. 
