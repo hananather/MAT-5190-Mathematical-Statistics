@@ -1,8 +1,26 @@
 \section{November 15, 2021}
+\subsection{Inference}
+Our objective is now to use the information in the sample $X_1,...,X_n$ to make inferences about the unknown parameter.
+\\
+\\ 
 For $j = 1,..m$, let $T_j$ be measurable functions defined on $\RR^n \to \RR$ and not depending on $\theta$, and let $\boldsymbol{T} = (T_1,...,T_m)'$. Then
 $$
 \boldsymbol{T}(X_1,...,X_n) = \left(
 T_1(X_1,...,X_n),...,T_m(X_1,...X_n)
 \right)'
 $$
-is called a \vocab{m-dimensional statistic}. 
+is called a \vocab{m-dimensional statistic}.
+Any statistic T($\boldsymbol{X}$) defines a form of data reduction by partitioning the sample space $\SX$. If we only use the value of the statistic, T($\boldsymbol{x}$), rather than the entire sample $\boldsymbol{x}$, the two samples $\boldsymbol{x}$ and $\boldsymbol{y}$ will be treated equally if T($\boldsymbol{x}) =$ T($\boldsymbol{y}$) 
+\subsection{Sufficiency Principle}
+\begin{definition}
+    Let $\boldsymbol{X} = (X_1,...,X_n)$ be a random sample with a join pdf or pmf denoted by $f(\boldsymbol{x}|\theta)$. Let T = T($\boldsymbol{x}$)
+    be a statistic based on this sample with pdf (or pmf) denoted by $f_T(t|\theta)$. We say that T is a \vocab{sufficient statistic} for $\theta$ if for any $t$ such that $f_T(t|\theta) > 0$, the conditional pdf (or pmf) of $\boldsymbol{X}$ given $T=t$ does not depend on $\theta$.
+    \end{definition}
+\term{Remark.} The joint pdf (or pmf) of $(\boldsymbol{X},T)$ is 
+    $$
+    f_{X,T}(\boldsymbol{x},t| \theta) =
+        \begin{cases}
+            f(\boldsymbol{x}| \theta) \quad \text{if } t= T(\boldsymbol{x}) \\
+            0 \quad \text{otherwise}
+        \end{cases}
+    $$
