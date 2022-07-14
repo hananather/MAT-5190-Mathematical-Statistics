@@ -26,12 +26,14 @@
 
 \usepackage[headsepline ]{scrlayer-scrpage}
 \renewcommand{\headfont}{}
+\renewcommand*{\sectionmarkformat}{}
+
 \addtolength{\textheight}{3.14cm}
 \setlength{\footskip}{0.5in}
 \setlength{\headsep}{10pt}
 
 
-\automark[section]{section}
+\automark[subsection]{section}
 
 
 \rohead{\footnotesize\thepage}
@@ -104,7 +106,7 @@
 \addtokomafont{partprefix}{\rmfamily}
 
 
-
+%% round blue box
 \theoremstyle{definition}
 \mdfdefinestyle{mdbluebox}{%
 	roundcorner = 10pt,
@@ -115,6 +117,7 @@
 	nobreak=true,
 	linecolor=blue,
 	backgroundcolor=TealBlue!5,
+	nobreak=true,
 }
 \declaretheoremstyle[
 	headfont=\sffamily\bfseries\color{MidnightBlue},
@@ -123,7 +126,53 @@
 	postheadspace={0pt}
 ]{thmbluebox}
 
+\mdfdefinestyle{mdbluebox*}{%
+	skipabove=8pt,
+	linewidth=1.5pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=Blue!70!black,
+	backgroundcolor=TealBlue!5,
+	nobreak=true,
+}
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{Blue!70!black},
+	bodyfont=\normalfont,
+	spaceabove=2pt,
+	spacebelow=1pt,
+	mdframed={style=mdbluebox*},
+	headpunct={},
+]{thmbluebox*}
 
+
+\mdfdefinestyle{mdbluebox**}{%
+	linewidth=0.5pt,
+	skipabove=12pt,
+	frametitleaboveskip=5pt,
+	frametitlebelowskip=0pt,
+	skipbelow=2pt,
+	frametitlefont=\bfseries,
+	innertopmargin=4pt,
+	innerbottommargin=8pt,
+	nobreak=true,
+	linecolor=Blue!70!black,
+	backgroundcolor=TealBlue!5,
+	nobreak=true,
+}
+\declaretheoremstyle[
+	headfont=\bfseries\color{RawSienna},
+	mdframed={style=mdredbox},
+	headpunct={\\[3pt]},
+	postheadspace={0pt},
+]{thmredbox}
+
+
+
+
+%% red boxes
+%% red box square
 \mdfdefinestyle{mdredbox}{%
 	linewidth=0.5pt,
 	skipabove=12pt,
@@ -144,6 +193,30 @@
 	postheadspace={0pt},
 ]{thmredbox}
 
+%% red box line
+
+
+\mdfdefinestyle{mdredbox}{%
+	skipabove=8pt,
+	linewidth=2pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=RawSienna,
+	backgroundcolor=Salmon!5,
+}
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RawSienna},
+	bodyfont=\normalfont,
+	spaceabove=2pt,
+	spacebelow=1pt,
+	mdframed={style=mdredbox*},
+	headpunct={ --- },
+]{thmredbox*}
+
+
+
 \mdfdefinestyle{mdgreenbox}{%
 	skipabove=8pt,
 	linewidth=2pt,
@@ -153,6 +226,7 @@
 	bottomline=false,
 	linecolor=ForestGreen,
 	backgroundcolor=ForestGreen!5,
+	nobreak=true,
 }
 \declaretheoremstyle[
 	headfont=\bfseries\sffamily\color{ForestGreen!70!black},
@@ -171,6 +245,29 @@
 	headpunct={},
 ]{thmgreenbox*}
 
+
+%% New Green box
+\mdfdefinestyle{mdgreenbox**}{%
+	skipabove=8pt,
+	linewidth=1pt,
+	rightline=true,
+	leftline=true,
+	topline=true,
+	bottomline=true,
+	linecolor=ForestGreen,
+	backgroundcolor=ForestGreen!5,
+	nobreak=true
+}
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{ForestGreen!70!black},
+	bodyfont=\normalfont,
+	spaceabove=2pt,
+	spacebelow=1pt,
+	mdframed={style=mdgreenbox**},
+	headpunct={ --- },
+]{thmgreenbox**}
+
+
 \mdfdefinestyle{mdblackbox}{%
 	skipabove=8pt,
 	linewidth=3pt,
@@ -180,6 +277,7 @@
 	bottomline=false,
 	linecolor=black,
 	backgroundcolor=RedViolet!5!gray!5,
+	nobreak=true,
 }
 \declaretheoremstyle[
 	headfont=\bfseries,
@@ -190,27 +288,9 @@
 	headpunct={ --- }
 ]{thmblackbox}
 
-\mdfdefinestyle{mdbluebox*}{%
-	skipabove=8pt,
-	linewidth=1.5pt,
-	rightline=false,
-	leftline=true,
-	topline=false,
-	bottomline=false,
-	linecolor=Blue!70!black,
-	backgroundcolor=TealBlue!5,
-}
-\declaretheoremstyle[
-	headfont=\bfseries\sffamily\color{Blue!70!black},
-	bodyfont=\normalfont,
-	spaceabove=2pt,
-	spacebelow=1pt,
-	mdframed={style=mdbluebox*},
-	headpunct={},
-]{thmbluebox*}
 
 \newenvironment{note}{%
-	\begin{mdframed}[linecolor=Blue,backgroundcolor=TealBlue!5, roundcorner = 10pt, nobreak=true]%
+	\begin{mdframed}[linecolor=Blue!70!black,backgroundcolor=TealBlue!5, nobreak=true]%
 	\color{black}}%
 	{\end{mdframed}}
 
@@ -220,7 +300,7 @@
 
 
 \declaretheorem[%
-style=thmgreenbox*,name=Theorem,numberwithin=section]{theorem}
+style=thmgreenbox**,name=Theorem,numberwithin=section]{theorem}
 \declaretheorem[style=thmblackbox,name=Lemma,sibling=theorem]{lemma}
 \declaretheorem[style=thmbluebox,name=Corollary,sibling=theorem]{corollary}
 \declaretheorem[style=thmblackbox,name=Example,sibling=theorem]{example}
