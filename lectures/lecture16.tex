@@ -4,11 +4,11 @@ Our objective is now to use the information in the sample $X_1,...,X_n$ to make 
 \\
 \\ 
 For $j = 1,..m$, let $T_j$ be measurable functions defined on $\RR^n \to \RR$ and not depending on $\theta$, and let $\boldsymbol{T} = (T_1,...,T_m)'$. Then
-$$
-\boldsymbol{T}(X_1,...,X_n) = \left(
-T_1(X_1,...,X_n),...,T_m(X_1,...X_n)
-\right)'
-$$
+    $$
+    \boldsymbol{T}(X_1,...,X_n) = \left(
+    T_1(X_1,...,X_n),...,T_m(X_1,...X_n)
+    \right)'
+    $$
 is called a \vocab{m-dimensional statistic}.
 Any statistic T($\boldsymbol{X}$) defines a form of data reduction by partitioning the sample space $\SX$. If we only use the value of the statistic, T($\boldsymbol{x}$), rather than the entire sample $\boldsymbol{x}$, the two samples $\boldsymbol{x}$ and $\boldsymbol{y}$ will be treated equally if T($\boldsymbol{x}) =$ T($\boldsymbol{y}$) 
 \subsection{Sufficiency Principle}
@@ -24,3 +24,14 @@ Any statistic T($\boldsymbol{X}$) defines a form of data reduction by partitioni
             0 \quad \text{otherwise}
         \end{cases}
     $$
+    
+\begin{theorem}[Factorization Theorem]
+    Let $\boldsymbol{X} = (X_1,...,X_n)$ be a random sample with a join pdf or pmf denoted by $f(\boldsymbol{x}|\theta)$. Let
+    $$\boldsymbol{T} = \boldsymbol{T}(X_1,...,X_n) = \left(
+    T_1(X_1,...,X_n),...,T_k(X_1,...X_n)
+    \right)'$$ be a $k-$dimensional statistic. Then $\boldsymbol{T}$ is a sufficient statistic for $\boldsymbol{\theta}$ if and only if 
+    $$
+    f(\boldsymbol{x}|\theta) = g(\boldsymbol{T}|\boldsymbol{\theta})\cdot h(\boldsymbol{x}) \quad \text{ for all } \boldsymbol{x} \in \SX.
+    $$
+
+\end{theorem}
