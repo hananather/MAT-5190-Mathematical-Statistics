@@ -16,4 +16,33 @@
     \sum_{i=1}^{k}w_i(\theta)t_i(x)
     \right \}
     $$
+    with $\theta = (\theta_1,...,\theta_d)$. Suppose that $d \leq k$. Define 
+    $$T_i = T_i(\boldsymbol{X}) = \sum_{j=1}^{n}T_i(X_j)
+    \quad \forall i=1,...,k.$$
+    Then $\boldsymbol{T} = (T_1,...,T_k)$ is a sufficient statistic for $\theta$.
 \end{theorem}
+\begin{proof}
+    The joint pdf of $\boldsymbol{X}$ is:
+    \begin{align*}
+    f(\boldsymbol{x}|\theta) & = 
+    \prod_{j=1}^{n}f_{x_j}(x_j \theta) 
+    = \prod_{j=1}^{n} \left[
+    h(x_j)c(\theta) \left \{
+    \sum_{i=1}^{k}w_i(\theta)t_i(x_j)
+    \right\}
+    \right ] \\
+    & = \prod_{j=1}^{n}h(x_j)[c(\theta)]^n \mathrm{exp} \left \{
+    \sum_{i=1}^{k}w_i(\theta)t_i(x_j)
+    \right\}
+    \end{align*}
+    Clearly, 
+    $$
+    \underbrace{ \prod_{j=1}^{n}h(x_j)}_{h'(x)}
+    \underbrace{[c(\theta)]^n\mathrm{exp} \left \{
+    \sum_{i=1}^{k}w_i(\theta)t_i(x_j)
+    \right\}}_{g(T_1(\boldsymbol{x}),...,T_k(\boldsymbol{x})|\theta)}
+    $$
+    Thus, by the Factorization theorem $(T_1(\boldsymbol{x}),...,T_k(\boldsymbol{x})|\theta)$ is a sufficient statistic for $\theta$.
+\end{proof}
+\\
+\term{Remark:} If $\boldsymbol{T}$ is a sufficient statistic for $\theta$, then any one-to-one transformation of $\boldsymbol{S} = \pi(\boldsymbol{T})$ is also a sufficient statistic for for $\theta$, $\forall \pi$ one-to-one maps. \textbf{Therefore, a sufficient statistic is not unique}. 
