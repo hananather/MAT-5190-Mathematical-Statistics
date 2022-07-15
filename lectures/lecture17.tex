@@ -44,5 +44,11 @@
     $$
     Thus, by the Factorization theorem $(T_1(\boldsymbol{x}),...,T_k(\boldsymbol{x})|\theta)$ is a sufficient statistic for $\theta$.
 \end{proof}
-\\
 \term{Remark:} If $\boldsymbol{T}$ is a sufficient statistic for $\theta$, then any one-to-one transformation of $\boldsymbol{S} = \pi(\boldsymbol{T})$ is also a sufficient statistic for for $\theta$, $\forall \pi$ one-to-one maps. \textbf{Therefore, a sufficient statistic is not unique}. 
+\begin{definition}
+    A sufficient statistic is $\boldsymbol{T} = (T_1,...,T_k)$ is called a \vocab{minimal sufficient statistic} for $\theta$ if, for any other sufficient statistic $\boldsymbol{T}^* = (T_1^*,...,T_k^*)$, there exists a function $\phi$ such that $\boldsymbol{T} = \phi(\boldsymbol{T}^*)$. This is equivalent to saying that
+    $$
+    T^*(\boldsymbol{x}) = T^*(\boldsymbol{y}) \Longrightarrow T(\boldsymbol{x}) = T(\boldsymbol{y})
+    $$
+\end{definition}
+\term{Note:} A minimal sufficient statistic may \textbf{NOT} be unique.
