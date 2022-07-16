@@ -1,1 +1,36 @@
 \section{November 22, 2021}
+\subsection{The Sufficiency Principle (Continued)}
+So far, we have covered sufficient statistics which in a sense contain all the information about $\theta$ that is available in the sample. Next we look at a statistic which is quite the opposite.
+\begin{definition}[Ancillary Statistic]
+    A statistic $S(\boldsymbol{X})$ whose distribution does not depend on the parameter
+    $\theta$ is called an \vocab{ancillary} statistic.
+\end{definition}
+An ancillary statistic contains no information about $\theta$! An ancillary statistic has a fixed and known distribution that is unrelated to $\theta.$
+\begin{example}[Location and Scale family ancillary statistic]
+    Let $X_1,...,X_n$ be iid observations from a location parameter family with pdf $g(x|\mu) = f(x-\mu)$ where $f$ is a standard pdf. Then we will show that
+    $$
+    \begin{cases}
+        R = X_{(n)} - N_{(1)} \quad \text{is ancillary statistic for } \mu. \\
+        S^2 = \frac{1}{n-1} \sum_{i=1}^{n}(X_i - \Bar{X})^2 \quad \text{is ancillary statistic for } \mu.
+    \end{cases}
+    $$ 
+    In addition to that if we have random sample $\boldsymbol{X} = X_1,...,X_n$ from a \textit{scale family} with pdf $g(x|\theta) = \frac{1}{\sigma}f(x/\sigma)$, where $f(z)$ is the standard pdf of the family. Then
+    $$
+    T(\boldsymbol{X}) = \left( 
+    \frac{X_1}{X_n},...,\frac{X_{n-1}}{X_n} 
+    \right)
+    \text{ is an ancillary statistic for }\sigma
+    $$
+    In particular $\bar{X}/X_n$ is an ancillary statistic for $\sigma$.
+    \begin{proof}
+        
+    \end{proof}
+\end{example}
+\begin{definition}[Complete statistic]
+    Let $f(t|\theta)$ be a family of pdf or omfs for a statistic $T(\boldsymbol{X})$. The family of probability distributions is called \vocab{complete} if $\EE_{\theta}(T) = 0$ for all $\theta$ implies that $\PP_{\theta}(g(T) =0) =1$ for all $\theta$. Equivalently, $T(\boldsymbol{X})$ is called a \vocab{complete statistic}.
+    \\
+    In other words, let $T$ be the statistic whose range is $\ST$, it is called complete if
+    $$
+    \EE g(T) = 0 \text{ for all } \theta \implies g(t) =0 \text{ for all } t \in \ST
+    $$
+\end{definition}
