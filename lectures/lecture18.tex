@@ -14,7 +14,7 @@ An ancillary statistic contains no information about $\theta$! An ancillary stat
         S^2 = \frac{1}{n-1} \sum_{i=1}^{n}(X_i - \Bar{X})^2 \quad \text{is ancillary statistic for } \mu.
     \end{cases}
     $$ 
-    In addition to that if we have random sample $\boldsymbol{X} = X_1,...,X_n$ from a \textit{scale family} with pdf $g(x|\theta) = \frac{1}{\sigma}f(x/\sigma)$, where $f(z)$ is the standard pdf of the family. Then
+    In addition to that if we have random sample $\boldsymbol{X} = (X_1,...,X_n)$ from a \textit{scale family} with pdf $g(x|\theta) = \frac{1}{\sigma}f(x/\sigma)$, where $f(z)$ is the standard pdf of the family. Then
     $$
     T(\boldsymbol{X}) = \left( 
     \frac{X_1}{X_n},...,\frac{X_{n-1}}{X_n} 
@@ -34,3 +34,27 @@ An ancillary statistic contains no information about $\theta$! An ancillary stat
     \EE g(T) = 0 \text{ for all } \theta \implies g(t) =0 \text{ for all } t \in \ST
     $$
 \end{definition}
+\begin{theorem}[Basu's Theorem]
+    If $T(\boldsymbol{X})$ is a complete ad minimal sufficient statistic, the $T(\boldsymbol{X})$ is independent of every ancillary statistic. 
+\end{theorem}
+\begin{proof}
+    The proof for the discrete case is given on page 287 of the textbook, review it!
+\end{proof}
+\begin{theorem}[Complete Statistics in the exponential families]
+    Let $\boldsymbol{X} = (X_1,...,X_n)$ be iid observations from an exponential family with pdf or pmf of the form
+    $$
+        f(x|\theta) = h(x)c(\theta)\text{exp} \left (
+            \sum_{j=1}^{k}w(\theta_j)t_j(x),
+        \right) 
+    $$
+    where $\boldsymbol{\theta} = (\theta_1,...,\theta_k)$. Then the statistic 
+    $$
+    T(\boldsymbol{X}) = \left (
+        \sum_{i=1}^{n}t_1(X_i), \sum_{i=1}^{n}t_2(X_i),...,\sum_{i=1}^{n}t_k(X_i),
+    \right )
+    $$
+    is complete as long as the parameter space $\Theta$ contains an open set in $\RR^k$.
+\end{theorem}
+\begin{proof}
+    Proof is omitted from this course.
+\end{proof}
