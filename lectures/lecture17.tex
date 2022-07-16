@@ -9,7 +9,7 @@
 \end{example}
 
 \begin{theorem}
-    Let $\boldsymbol{X} = (X_1,...,X_j)$ be a randome sample from a pdf(or pmf) which belongs to the following exponential family
+    Let $\boldsymbol{X} = (X_1,...,X_n)$ be a random sample from a pdf(or pmf) which belongs to the following exponential family
     $$
     f_X(x|\theta) = h(x)c(\theta)exp 
     \left \{ 
@@ -52,3 +52,14 @@
     $$
 \end{definition}
 \term{Note:} A minimal sufficient statistic may \textbf{NOT} be unique.
+\begin{theorem}[Lehman and Scheffe]
+    Let $\boldsymbol{X} = (X_1,...,X_n)$ be a random sample from a pdf(or pmf) which belongs to the following exponential family $f_X(x|\theta)$. Let $T = T(\boldsymbol{X})$ be a statistic which satisfies the following condition
+    $$
+    \frac{f(\boldsymbol{x}|\theta)}{f(\boldsymbol{y}|\theta)}\quad \textbf{does not depend on } \theta
+    \iff T(\boldsymbol{x}) =  T(\boldsymbol{y})
+    $$
+    Then $T$ is a minimal sufficient statistic. 
+\end{theorem}
+\begin{proof}
+    Proof is given in the text book.
+\end{proof}
