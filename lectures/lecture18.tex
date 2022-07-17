@@ -58,3 +58,29 @@ An ancillary statistic contains no information about $\theta$! An ancillary stat
 \begin{proof}
     Proof is omitted from this course.
 \end{proof}
+\subsection{Likelihood Principle}
+\begin{definition}[Likelihood function]
+    Let $f(\boldsymbol{x}|\theta)$ denote the joint pdf or pmf of the sample $\boldsymbol{X} = (X_1,...,X_n)$. Then, given that $\boldsymbol{X} = \boldsymbol{x}$ is observed, the function of $\theta$ defined by $$
+    L(\theta|\boldsymbol{x}) = f(\boldsymbol{x}|\theta)
+    $$
+    is called the \vocab{likelihood function}.
+\end{definition}
+\textbf{Likelihood Principle:} If $\boldsymbol{x}$ and $\boldsymbol{y}$ are two sample points such that $L(\theta|\boldsymbol{x}) \propto L(\theta|\boldsymbol{y})$, i.e, $\exists C(\boldsymbol{x},\boldsymbol{y})$ constant such that
+$$
+    L(\theta|\boldsymbol{x}) = C(\boldsymbol{x},\boldsymbol{y}) L(\theta|\boldsymbol{y}) \quad \text{for all } \theta,
+$$
+then the conclusions drawn from $\boldsymbol{x}$ and $\boldsymbol{y}$ should be identical. 
+We define an \textbf{experiment} $E$ to be a triple $(\boldsymbol{X}, \theta, \{f(\boldsymbol{x}|\theta)\})$, wher $\boldsymbol{X}$ is a random vector with pmf $f(\boldsymbol{x}|\theta)$ for some $\theta \in \Theta$. An experimenter knowing what experiment $E$ was performed hand having observed a particular $\boldsymbol{X} = \boldsymbol{x}$, will make some inference or draw soem conclusion about $\theta$. We denote this conclusion by Ev$(E,\boldsymbol{x})$, which stands for \textit{evidence about $\theta$ arising from $E$ and $\boldsymbol{x}$}.
+\\
+\textbf{Formal sufficiency Principle:} Consider experiment $E = (\boldsymbol{X}, \theta,\{f(\boldsymbol{x}|\theta)\})$ and suppose that is $T(\boldsymbol{X})$ a sufficient statistic for $\theta$. If $\boldsymbol{x}$ and $\boldsymbol{y}$ are two samples such that $T(\boldsymbol{x}) = T(\boldsymbol{y})$ then
+$$
+\text{Ev}(E,\boldsymbol{x}) = \text{Ev}(E,\boldsymbol{y})
+$$
+\textbf{Formal Likelihood Principle:} Suppose that we have two experiments, $E_1 = (\boldsymbol{X}_1, \theta, \{f(\boldsymbol{x}_1|\theta)\})$ and $E_2 = (\boldsymbol{X}_2, \theta, \{f(\boldsymbol{x}_2|\theta)\})$, where we have the unknown parameter $\theta$ is the same for both experiments. If $\boldsymbol{x}$ is a sample from $E_1$ and $\boldsymbol{y}$ is a sample from $E_2$ such that 
+$$
+    L(\theta|\boldsymbol{x}) = C(\boldsymbol{x},\boldsymbol{y}) L(\theta|\boldsymbol{y}) \quad \text{for all } \theta,
+$$
+then,
+$$
+\text{Ev}(E_1,\boldsymbol{x}) = \text{Ev}(E_2,\boldsymbol{y})
+$$
