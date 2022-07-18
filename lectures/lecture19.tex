@@ -1,6 +1,23 @@
 \section{November 24, 2021}
 \subsection{Equivariance Principle}
 \textbf{Equivariance Principle:} If $\boldsymbol{Y} = g(\boldsymbol{X})$ is a change of measurement scale such that the model for $\boldsymbol{Y}$ has the same formal structure as the model for $\boldsymbol{X}$,  then inference procedure should be both measurement equivariant and formally equivariant. 
-\begin{definition}
-    A set $\SG$
+\begin{definition}[Group transformation]
+    A set $\SG$ of functions, $\{ g(\boldsymbol{x}: g \in \SG) \}$, of the form $g: \SX \to \SX$ is called a \vocab{group transformation} of $\SX$ if
+    \begin{enumerate}[(i)]
+        \item (Inverse) $\forall g \in \SG$, $\exists g^{-1} \in \SG$ such that $g\circ g^{-1} = e$, where $e: \SX \to \SX$ is the identity $e(x) = x$. 
+        \item (Composition) For every $g,g^{'} \in \SG$, $g \circ g^{'} \in \SG$
+        \item (Identity) The identity, $e(\boldsymbol{x})$ is an element of $\SG$.
+    \end{enumerate}
 \end{definition}
+\begin{definition}[Invariant]
+    Let $\SF = \{f(\boldsymbol{x}|\theta): \theta \in \Theta \}$ be a set of pdf or pmfs for $\boldsymbol{X}$, and let $\SG$ be a group of transformations of the  sample space $\SX$. Then $\SF$ is \vocab{invariant under the group $G$} if for every $\theta \in \Theta$ and $g \in \SG$ there exists a unique $\theta^{'} \in \Theta$ such that $\boldsymbol{Y} = g(\boldsymbol{X})$ has the distribution $f(\boldsymbol{y}|\theta^{'})$ if $\boldsymbol{X}$ has the distribution $f(\boldsymbol{x}|\theta)$.
+\end{definition}
+The equivariance principle essentially says that inference based on $\boldsymbol{X}$ should be the same as inference based on $\boldsymbol{Y}$.
+\begin{example}[Location family is invariant]
+
+\end{example}
+\begin{example}[Scale family is invariant]
+
+\end{example}
+\subsection{Methods of Moments}
+A statistic is a function of the random sample, and we generally use such functions to approximate the value of the unknown parameter $\theta$, which is underlying the parameter for the underlying distribution of the sample) called \vocab{estimator}. Once we have observed a particular realization of $\boldsymbol{X}$, (the sample $\boldsymbol{x}$), we refer to the value $T(\boldsymbol{x})$ of the estimator for that particular realization as \vocab{estimate for $\theta$}.
