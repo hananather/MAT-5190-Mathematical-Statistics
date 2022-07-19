@@ -41,4 +41,18 @@ The method of moment estimator $(\hat{\theta}_1,..,\hat{\theta}_k)$ of $(\theta_
 \end{align*}
 \textbf{Remark:} $\sum_{i=1}^{n} (X_i-\bar{X})^2 = \sum_{i=1}^{n}X_1^2 + \mu \bar{X}^2 - 2\bar{X}\sum_{i=1}^{n}X_i = \sum_{i=1}^{n} X_i^2 - n\bar{X}^2$
     $$ \implies \sum_{i=1}^{n}X_i^2 = \sum_{i=1}^{n} (X_i-\bar{X})^2 +n\bar{X}^2$$
-\subsection{Maximum Likehood Method}
+\subsection{Maximum Likelihood Estimators}
+The method of maximum likelihood is by far the most popular technique for deriving estimators. For each observed sample $\boldsymbol{x} = (x_1,...,x_n)$, we define the \vocab{maximum likelihood estimate} as the point $\hat{\theta} = \hat{\theta} (\boldsymbol{x})$ where the function $\theta \mapsto L(\theta | \boldsymbol{x})$ attains its maximum, i,e.:
+$$
+\underset{\theta \in \Theta}{max}L(\theta|\boldsymbol{x}) = L(\hat{\theta}|\boldsymbol{x})$$
+For each sample point $\boldsymbol{x}$, and $ \hat{\theta} (\boldsymbol{x})$ is the parameter value at which  $(\hat{\theta}|\boldsymbol{x})$ attains its maximum as a function of $\theta$, with $\boldsymbol{x}$ held fixed. A \textit{maximum likelihood estimator (MLE)} of the parameter $\theta$ based on sample $\boldsymbol{X}$ is $\hat{\theta}(\boldsymbol{X})$. 
+\\
+\\
+To find the MLE, in most cases we will be solving the equation
+$$
+\frac{d}{d\theta} L(\theta|\boldsymbol{x}) = 0
+$$
+and checking that
+$$
+\frac{d^2}{d\theta^2} L(\theta|\boldsymbol{x}) \mid_{\theta = \hat{\theta}} < 0
+$$
