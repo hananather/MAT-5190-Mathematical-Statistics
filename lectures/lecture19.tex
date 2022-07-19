@@ -32,4 +32,12 @@ Let $X_1,...,X_n$ be a sample from a population with pdf or pmf $f(x|\theta_1,..
     m_k & = \frac{1}{n}\sum_{i=1}^{n}X_i^k, \quad \mu_k(\theta) = \EE X^k = 
     \int_{-\infty}^{\infty}x^kf(x|\theta)dx
 \end{align*}
-The method of moment estimator $(\hat{\theta}_1,..,\hat{\theta}_k)$ of $(\theta_1,...,\theta_k)$ 
+The method of moment estimator $(\hat{\theta}_1,..,\hat{\theta}_k)$ of $(\theta_1,...,\theta_k)$ is the solution of the full system of $k$ equations:
+\begin{align*}
+    \frac{1}{n}\sum_{i=1}^{n}X_i^1 &= \mu_1(\theta) \\
+    \frac{1}{n}\sum_{i=1}^{n}X_i^2 &= \mu_2(\theta) \\
+    \vdots \\ 
+    \frac{1}{n}\sum_{i=1}^{n}X_i^k &= \mu_k(\theta) 
+\end{align*}
+\textbf{Remark:} $\sum_{i=1}^{n} (X_i-\bar{X})^2 = \sum_{i=1}^{n}X_1^2 + \mu \bar{X}^2 - 2\bar{X}\sum_{i=1}^{n}X_i = \sum_{i=1}^{n} X_i^2 - n\bar{X}^2$
+    $$ \implies \sum_{i=1}^{n}X_i^2 = \sum_{i=1}^{n} (X_i-\bar{X})^2 +n\bar{X}^2$$
