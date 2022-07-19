@@ -19,5 +19,17 @@ The equivariance principle essentially says that inference based on $\boldsymbol
 \begin{example}[Scale family is invariant]
 
 \end{example}
-\subsection{Methods of Moments}
+\subsection{Methods for finding estimators}
 A statistic is a function of the random sample, and we generally use such functions to approximate the value of the unknown parameter $\theta$, which is underlying the parameter for the underlying distribution of the sample) called \vocab{estimator}. Once we have observed a particular realization of $\boldsymbol{X}$, (the sample $\boldsymbol{x}$), we refer to the value $T(\boldsymbol{x})$ of the estimator for that particular realization as \vocab{estimate for $\theta$}.
+\\
+We will study \textbf{3 methods for constructing estimator:} method of moments, maximum likelihood estimation, and Bayes method.
+\subsection{Methods of Moments}
+Let $X_1,...,X_n$ be a sample from a population with pdf or pmf $f(x|\theta_1,...,\theta_k)$. \vocab{Method of moment estimators} are found by equating the first $k$ sample moments to corresponding $k$ population moments.
+\begin{align*}
+    m_1 & = \frac{1}{n}\sum_{i=1}^{n}X_i^1, \quad \mu_1(\theta) = \EE X^1  = \int_{-\infty}^{\infty}xf(x|\theta)dx\\
+    m_2 & = \frac{1}{n}\sum_{i=1}^{n}X_i^2, \quad \mu_2(\theta) = \EE X^2= \int_{-\infty}^{\infty}x^2f(x|\theta)dx \\
+    \vdots \\ 
+    m_k & = \frac{1}{n}\sum_{i=1}^{n}X_i^k, \quad \mu_k(\theta) = \EE X^k = 
+    \int_{-\infty}^{\infty}x^kf(x|\theta)dx
+\end{align*}
+The method of moment estimator $(\hat{\theta}_1,..,\hat{\theta}_k)$ of $(\theta_1,...,\theta_k)$ 
