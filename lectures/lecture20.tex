@@ -1,1 +1,21 @@
 \section{November 29, 2021}
+\subsection{Invariance property of MLE}
+Suppose that the distribution is index by the parameter $\theta$, if are interested in estimating some function of $\theta$, say $\tau(\theta)$.
+If we let $\eta = \tau(\theta)$, then the inverse function $\theta = \tau^{-1}(\eta)$ is well-defined, and we can express the likelihood function as a function of $\eta$
+$$
+L^{*}(\eta|\boldsymbol{x}) \prod_{i=1}^{n}f(x_i|\tau^{-1}(\eta)) = L(\tau^{-1}(\eta)|\boldsymbol{x})
+$$
+and,
+$$
+\underset{\eta}{\text{sup}}L^{*}(\eta|\boldsymbol{x}) = \underset{\eta}{\text{sup}}L(\tau^{-1}(\eta)|\boldsymbol{x})
+= \underset{\eta}{\text{sup}}L(\theta|\boldsymbol{x})
+$$ 
+The \vocab{induced likelihood} of $\eta$ is defined by 
+$$
+\underset{\eta}{\text{sup}}L^{*}(\eta|\boldsymbol{x}) =
+\underset{\theta: \tau(\theta) = \eta}{\text{sup}}L(\theta|\boldsymbol{x})
+$$
+The value of $\Hat{\eta}$ which maximized $L^{*}(\eta|\boldsymbol{x})$ is called the MLE of $\eta$:
+$$
+\underset{\eta}{\text{sup}}L^{*}(\eta|\boldsymbol{x}) =L^{*}(\Hat{\eta}|\boldsymbol{x})
+$$
