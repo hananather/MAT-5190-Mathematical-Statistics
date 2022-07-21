@@ -7,15 +7,45 @@ L^{*}(\eta|\boldsymbol{x}) \prod_{i=1}^{n}f(x_i|\tau^{-1}(\eta)) = L(\tau^{-1}(\
 $$
 and,
 $$
-\underset{\eta}{\text{sup}}L^{*}(\eta|\boldsymbol{x}) = \underset{\eta}{\text{sup}}L(\tau^{-1}(\eta)|\boldsymbol{x})
-= \underset{\eta}{\text{sup}}L(\theta|\boldsymbol{x})
+\underset{\eta}{\text{sup }}L^{*}(\eta|\boldsymbol{x}) = \underset{\eta}{\text{sup }}L(\tau^{-1}(\eta)|\boldsymbol{x})
+= \underset{\eta}{\text{sup }}L(\theta|\boldsymbol{x})
 $$ 
 The \vocab{induced likelihood} of $\eta$ is defined by 
 $$
-\underset{\eta}{\text{sup}}L^{*}(\eta|\boldsymbol{x}) =
+\underset{\eta}{\text{sup }}L^{*}(\eta|\boldsymbol{x}) =
 \underset{\theta: \tau(\theta) = \eta}{\text{sup}}L(\theta|\boldsymbol{x})
 $$
 The value of $\Hat{\eta}$ which maximized $L^{*}(\eta|\boldsymbol{x})$ is called the MLE of $\eta$:
 $$
-\underset{\eta}{\text{sup}}L^{*}(\eta|\boldsymbol{x}) =L^{*}(\Hat{\eta}|\boldsymbol{x})
+\underset{\eta}{\text{sup }}L^{*}(\eta|\boldsymbol{x}) =L^{*}(\Hat{\eta}|\boldsymbol{x})
 $$
+\begin{theorem}[Invariance property of MLEs]
+    If $\hat{\theta}$ is the MLE of $\theta$, then for any function $\tau(\theta)$, the MLE of $\tau(\theta)$ is $\tau(\hat{\theta})$.
+\end{theorem}
+\begin{proof}
+    Let $\hat{\eta}$ denote the value that maximizes $L^{*}(\eta|\boldsymbol{x})$. Our objective is to show that $L^{*}(\eta|\boldsymbol{x}) = L^{*}(\tau(\hat{\theta})|\boldsymbol{x})$. Since,
+    \begin{align*}
+        L^{*}(\hat{\eta}|\boldsymbol{x}) &= \underset{\eta}{\text{sup}}
+        \underset{\Large \theta: \tau(\theta) = \eta}{\text{sup}} L(\theta|\boldsymbol{x})\\
+        &= \underset{\theta}{\text{sup }}L(\theta|\boldsymbol{x}) \\ 
+        & = L(\hat{\theta}|\boldsymbol{x})
+    \end{align*}
+\end{proof}
+We can see that using this theorem that MLE of $\theta^2$ is $\bar{X}^2$, and for a more complicated function such as $\sqrt{p(1-p)}$, where $p$ is the binomial probability, the MLE is $\sqrt{\hat{p}(1-\hat{p} )}$.
+\subsection{Bayes Estimators}
+Denote the prior distribution $\pi(\theta)$ and the sampling distribution by $f(\boldsymbol{x}|\theta)$, then the posterior distribution is given by 
+$$
+\pi(\theta|\boldsymbol{x}) = \frac{f(\boldsymbol{x}|\theta)\pi(\theta)}{m(\boldsymbol{x})} \quad 
+\quad \text{(Bayes' Rule!)}
+$$
+where $m(\boldsymbol{x})$ is the marginal distribution of $\boldsymbol{X}$, that is 
+$$
+    m(\boldsymbol{x}) = \int f(\boldsymbol{x}|\theta)\pi(\theta)d\theta
+$$
+
+\begin{definition}
+    Let $\SF$ be a class of distributions for $X$. A class $\Pi$ of prior distributions is a \vocab{conjugate family} for $\SF$ if the posterior distribution is in the class $\Pi$ for all $f \in \SF$, i.e,
+    $$
+    \pi(\theta|\boldsymbol{x})\quad \text{ for all } \pi \in \Pi, f \in \SF
+    $$
+\end{definition}
