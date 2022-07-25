@@ -6,4 +6,14 @@ The general topic of evaluating statistical procedures is part of a branch of st
     The \vocab{mean square error} of an estimator $W$ of a parameter $\theta$ is the function of $\theta$ defined by $\EE_{\theta}(W-\theta)^2$.
 \end{definition}
 
+\begin{definition}[Bias]
+    The bias of an estimator $T$ for a parameter $\theta$ is defined by 
+    $$
+    \text{Bias}_{\theta}(T) = \EE_{\theta}T -\theta
+    $$
+\end{definition}
+\textbf{Note:} $MSE$ incorporates two components, one measuring the variability and the other measuring bias.
+$$
+\text{MSE}_{\theta} = \VV ar_{\theta}(T) + (\text{Bias}_{\theta}(T))^2
+$$
 \subsection{Sufficiency and Unbiasedness}
