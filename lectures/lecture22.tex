@@ -16,4 +16,17 @@ The general topic of evaluating statistical procedures is part of a branch of st
 $$
 \text{MSE}_{\theta} = \VV ar_{\theta}(T) + (\text{Bias}_{\theta}(T))^2
 $$
+\begin{example}
+    Let $X-1,...,X_n$ be iid $n(\mu,\sigma^2)$. The statistics $\bar{X}$ and $\S^2$ are both biased estimators since
+    $$
+    \EE \bar{X} = \mu \quad, \EE S^2 = \sigma^2, \quad \text{for all $\mu$ and $\sigma$}.
+    $$
+    The MSEs of the estimators are given by
+    $$
+    \EE(\bar{X} - \mu)^2 = \VV ar \bar{X} = \frac{\sigma}{n}.
+    $$
+    $$
+    \EE(S^2 \sigma^2)^2 = \VV ar S^2
+    $$
+\end{example}
 \subsection{Sufficiency and Unbiasedness}
