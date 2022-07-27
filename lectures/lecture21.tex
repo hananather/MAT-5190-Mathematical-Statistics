@@ -1,6 +1,5 @@
 \section{December 1, 2021}
 \subsection{Methods of evaluating estimators}
-\subsection{Best unbiased estimators}
 The general topic of evaluating statistical procedures is part of a branch of statistics called decision theory. In this section we look at some basic criteria for evaluating estimators.
     
 \begin{definition}[Mean square error (MSE)]
@@ -30,3 +29,8 @@ $$
     \EE(S^2 \sigma^2)^2 = \VV ar S^2
     $$
 \end{example}
+\subsection{Best unbiased estimators (UMVUE)}
+If we compare estimators based on MSE, there is no single \textit{"best MSE"} estimator. The reason is that the class of all estimators is too large of a class. Therefore by placing certian restrictions on our estimators, we can limit the class of estimators.  
+\begin{definition}[Best unbiased estimator]
+    An estimator $W^*$ is the \vocab{best unbiased estimator} of $\tau(\theta)$ if it satisfies $\EE_{\theta}W^* = \tau(\theta)$ for all $\theta$ and, for any for any other estimator $W$ with $\EE_{\theta}W = \tau(\theta)$, we have $\VV ar_{\theta}W^* \leq \VV ar_{\theta} W$ for all $\theta$. $W^*$ is also called a \vocab{uniform minimum variance unbiased estimator (UMVUE)}
+\end{definition}
