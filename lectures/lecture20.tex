@@ -54,3 +54,20 @@ The \vocab{Bayes estimator} of $\theta$ is defined as the expected value of $\th
 $$
 \hat{\theta}_{B}(\boldsymbol{x}) = \int \theta \pi (\theta|\boldsymbol{x})d\theta 
 $$
+\begin{example}[Conjugate families]
+We showed that 
+$$
+    \pi(\theta|\boldsymbol{x}) = \text{Beta}
+    \left(\alpha + \sum_{i=1}^{n}x_i, \beta + n - \sum_{i=1}^{n}x_i \right)
+$$
+thus, we can clearly see that the beta family is a conjugate for the Bernoulli family.
+\\
+In addition to that we showed the normal family is conjugate to itself since
+$$
+\pi(\theta|\boldsymbol{x}) = \text{Normal}
+\left( 
+\frac{n \tau^2 \bar{x} + \sigma^2 \mu}{n \tau^2 + \sigma^2},
+\frac{\sigma^2 \tau^2}{\sigma^2 + n \tau^2}
+\right )
+$$
+\end{example}
