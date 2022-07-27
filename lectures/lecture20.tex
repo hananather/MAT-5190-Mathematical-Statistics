@@ -49,3 +49,8 @@ $$
     \pi(\theta|\boldsymbol{x})\quad \text{ for all } \pi \in \Pi, f \in \SF
     $$
 \end{definition}
+
+The \vocab{Bayes estimator} of $\theta$ is defined as the expected value of $\theta$ under the posterior distribution, which is the weighted average value of $\theta$ given the new evidence we have after observing the sample;
+$$
+\hat{\theta}_{B}(\boldsymbol{x}) = \int \theta \pi (\theta|\boldsymbol{x})d\theta 
+$$
