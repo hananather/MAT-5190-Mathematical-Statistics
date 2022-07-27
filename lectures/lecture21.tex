@@ -1,3 +1,32 @@
 \section{December 1, 2021}
 \subsection{Methods of evaluating estimators}
 \subsection{Best unbiased estimators}
+The general topic of evaluating statistical procedures is part of a branch of statistics called decision theory. In this section we look at some basic criteria for evaluating estimators.
+    
+\begin{definition}[Mean square error (MSE)]
+    The \vocab{mean square error} of an estimator $W$ of a parameter $\theta$ is the function of $\theta$ defined by $\EE_{\theta}(W-\theta)^2$.
+\end{definition}
+
+\begin{definition}[Bias]
+    The bias of an estimator $T$ for a parameter $\theta$ is defined by 
+    $$
+    \text{Bias}_{\theta}(T) = \EE_{\theta}T -\theta
+    $$
+\end{definition}
+\textbf{Note:} $MSE$ incorporates two components, one measuring the variability and the other measuring bias.
+$$
+\text{MSE}_{\theta} = \VV ar_{\theta}(T) + (\text{Bias}_{\theta}(T))^2
+$$
+\begin{example}
+    Let $X-1,...,X_n$ be iid $n(\mu,\sigma^2)$. The statistics $\bar{X}$ and $\S^2$ are both biased estimators since
+    $$
+    \EE \bar{X} = \mu \quad, \EE S^2 = \sigma^2, \quad \text{for all $\mu$ and $\sigma$}.
+    $$
+    The MSEs of the estimators are given by
+    $$
+    \EE(\bar{X} - \mu)^2 = \VV ar \bar{X} = \frac{\sigma}{n}.
+    $$
+    $$
+    \EE(S^2 \sigma^2)^2 = \VV ar S^2
+    $$
+\end{example}
