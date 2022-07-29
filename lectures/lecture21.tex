@@ -40,4 +40,19 @@ If we compare estimators based on MSE, there is no single \textit{"best MSE"} es
     \frac{d}{d\theta} \int W(\boldsymbol{x})f(\boldsymbol{x}|\theta)d\boldsymbol{x} = 
     \int W(\boldsymbol{x}) \frac{d}{d \theta}f(\boldsymbol{x}|\theta)d \boldsymbol{x}.
     $$
+    Then 
+    $$
+    \VV ar_{\theta}W \geq \frac{\left( \cfrac{d}{d\theta} \EE_\theta W \right)^2}{I_n(\theta)}
+    = \text{ CR-Lower-Bound}
+    $$
+    Where
+    $$
+    I_n(\theta) = \EE_{\theta}\left (
+    \frac{d}{d \theta} log f(\boldsymbol{X}|\theta)
+    \right)^2 = \textbf{Fisher information}
+    $$
 \end{theorem}
+\vocab{Note:}
+\begin{itemize}
+    \item If $W$ is an unbiased estimator of $\theta$ then $\frac{d}{d \theta} \EE_{\theta}W =1$, and thus the CR-Lower-Bound becomes $\cfrac{1}{I_n(\theta)}$.
+\end{itemize}
