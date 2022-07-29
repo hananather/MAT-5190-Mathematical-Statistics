@@ -34,7 +34,7 @@ If we compare estimators based on MSE, there is no single \textit{"best MSE"} es
 \begin{definition}[Best unbiased estimator]
     An estimator $W^*$ is the \vocab{best unbiased estimator} of $\tau(\theta)$ if it satisfies $\EE_{\theta}W^* = \tau(\theta)$ for all $\theta$ and, for any for any other estimator $W$ with $\EE_{\theta}W = \tau(\theta)$, we have $\VV ar_{\theta}W^* \leq \VV ar_{\theta} W$ for all $\theta$. $W^*$ is also called a \vocab{uniform minimum variance unbiased estimator (UMVUE)}
 \end{definition}
-\begin{theorem}[Cramer-Rao Lower Bound]
+\begin{theorem}[Cram\`er-Rao Lower Bound]
     Let $X_1,...,X_n$ be a random variables with joint pdf $f(\boldsymbol{x}|\theta)$. Let $W = W(\boldsymbol{X})$ be a finite variance estimator satisfying the following conditio:
     $$
     \frac{d}{d\theta} \int W(\boldsymbol{x})f(\boldsymbol{x}|\theta)d\boldsymbol{x} = 
