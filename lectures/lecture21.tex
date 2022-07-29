@@ -55,4 +55,15 @@ If we compare estimators based on MSE, there is no single \textit{"best MSE"} es
 \vocab{Note:}
 \begin{itemize}
     \item If $W$ is an unbiased estimator of $\theta$ then $\frac{d}{d \theta} \EE_{\theta}W =1$, and thus the CR-Lower-Bound becomes $\cfrac{1}{I_n(\theta)}$.
+    \item Generally the condtion in the theorem does not hold if the support of $f(\boldsymbol{x}|\theta)$ depends on $\theta$.
+    \item If $X_1,...,X_n$ are i.i.d with pdf $f(x|\theta)$, then
+    $$
+    I_n(\theta) = nI_1(\theta)
+    $$
+    \item $X_1,...,X_n$ are i.i.d with pdf $f(x|\theta)$ belonging to an exponential family, then the fist condition in the theorem is satisfied and
+    $$
+    I_1(\theta) = - \EE_{\theta}\left(
+    \frac{d^2}{d\theta^2}logf(\boldsymbol{X}|\theta)
+    \right )
+    $$
 \end{itemize}
