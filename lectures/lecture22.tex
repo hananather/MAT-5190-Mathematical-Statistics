@@ -1,6 +1,16 @@
 \section{December 6, 2021}
 \subsection{methods of evaluating estimators (continued)}
 \begin{corollary}[Attainment of CR-Lower-Bound]
-    If $X_1,...,X_n$ is a random sample from $f(x|\theta)$ and $W$ is an bisased estimator of $\tau(\theta)$ such that condition (1) of Cram\`er
+    If $X_1,...,X_n$ is a random sample from $f(x|\theta)$ and $W$ is an bisased estimator of $\tau(\theta)$ such that condition (1) of Cram\`er-Rao theorem is satisfied. Then $W$ attains the   Cram\`er-Rao lower bound if and only if there exists a fucntion $a(\theta$ such that
+    $$
+    a(\theta)[W(\boldsymbol{x}) - \tau(\theta)] = \cfrac{d}{d \theta} log f(\boldsymbol{x}|\theta)
+    $$
 \end{corollary}
 \subsection{Sufficiency and Unbiasedness}
+\begin{theorem}[Rao-Blackwell]
+    Let $W$ be any unbiased estimator of $\tau(\theta)$, and let $T$ be a sufficient statistic for $\theta$. Define $\phi(T) = \EE(W|T)$. Then $\EE_{\theta}\phi(T) = \tau(\theta)$ and 
+    $\VV ar_{\theta}\phi(T) \leq \VV ar_{\theta} W $ for all $\theta$. That is $\phi(T) = \EE(W|T)$ is a uniformly better unbiased estimator of $\tau(\theta)$.
+\end{theorem}
+\begin{theorem}
+    If $W$ is the best unbiased estimator of $\tau(\theta)$, then $W$ is unique. 
+\end{theorem}
