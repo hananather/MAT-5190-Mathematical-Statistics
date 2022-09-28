@@ -66,7 +66,9 @@ $$
     $$
 \end{definition}
 \subsection{Random Variables}
-Given a probability space $(S, \SF, \PP)$, the main objective of probability theory is that of calculating probabilities of events which may be of importance to us. The sample space $S$ may be quite an abstract set, thus we can faciliate our calculations by a transformation of the sample space $S$, into a subset of the real line $\RR$. This is achieved by a \vocab{random variable} which is a function from sample space $S$ into $\RR$.
+Given a probability space $(S, \SF, \PP)$, the main objective of probability theory is that of calculating probabilities of events which may be of importance to us. The sample space $S$ may be quite an abstract set, thus we can faciliate our calculations by a transformation of the sample space $S$, into a subset of the real line $\RR$. This is achieved by a \vocab{random variable}
+\footnote{A random variable is a real-valued function with a domain $\Omega$ which as an extra property called \vocab{measurability}.}
+which is a function from sample space $S$ into $\RR$.
 With every random variable $X$ we associate a function called the cumulative distribution function of $X$.
 
 
@@ -84,6 +86,20 @@ With every random variable $X$ we associate a function called the cumulative dis
     F_X(x) = \int_{-\infty}^{x}f_X(t)dt \text{ for all } x
     $$
 \end{definition}
+\begin{proposition}[Valid CDFs]
+    Any CDF $F$ has the following properties:
+    \begin{itemize}
+        \item Right-continuous: that is, for any $a$, we have
+        $$
+        F(a) = \lim_{x \to a^{+}}F(x)
+        $$
+        \item Convergence to 0 or 1 in the limits:
+            $$
+            \lim_{x \to - \infty} F(x) =0 \quad
+            \lim_{x \to \infty} F(x) =1
+            $$
+    \end{itemize}
+\end{proposition}
 
 \subsection{Transformation of expectations}
 \begin{theorem}
